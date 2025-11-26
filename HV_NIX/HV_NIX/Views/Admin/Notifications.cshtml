@@ -1,0 +1,48 @@
+﻿@model List<HV_NIX.Models.Notification>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="mb-3">📩 Danh sách thông báo</h2>
+
+<div class="mb-3">
+    <a href="/Admin/CreateNotification" class="btn btn-primary">
+        + Gửi thông báo
+    </a>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Người nhận</th>
+            <th>Tiêu đề</th>
+            <th>Nội dung</th>
+            <th>Thời gian</th>
+            <th>Đã đọc?</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var n in Model)
+        {
+            <tr>
+                <td>@n.NotificationID</td>
+                <td>@(n.User?.Email ?? "Tất cả")</td>
+                <td>@n.Title</td>
+                <td>@n.Message</td>
+                <td>@n.CreatedAt.ToString("dd/MM/yyyy HH:mm")</td>
+                <td>
+                    @if (n.IsRead)
+                    {
+                        <span class="text-success">Đã đọc</span>
+                    }
+                    else
+                    {
+                        <span class="text-danger">Chưa đọc</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

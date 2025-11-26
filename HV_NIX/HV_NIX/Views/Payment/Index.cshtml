@@ -1,0 +1,453 @@
+﻿@model List<HV_NIX.Models.PaymentMethod>
+@{
+    ViewBag.Title = "Phương thức thanh toán";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/account.css" />
+
+<main class="account-main">
+    @Html.Partial("_AccountSidebar")
+
+    <section class="account-content">
+        <!-- TIÊU ĐỀ + NÚT THÊM TRÊN CÙNG HÀNG -->
+        <div class="page-header">
+            <h2>  Phương thức thanh toán</h2>
+            <button class="btn-add" id="btnAdd"> Thêm phương thức</button>
+        </div>
+
+        @if (!Model.Any())
+        {
+            <div class="empty-state">
+                <p>⚠ Bạn chưa thêm phương thức thanh toán nào.</p>
+            </div>
+        }
+        else
+        {
+            foreach (var p in Model)
+            {
+                <div class="payment-card @(p.IsDefault ? "default" : "")">
+                    <div class="payment-left">
+                        <div class="payment-icon">
+                            @switch (p.MethodType)
+                            {
+                                case "Bank":
+                                    <i class="fa-solid fa-building-columns bank-icon"></i>
+                                    break;
+                                case "MoMo":
+                                    <i class="fa-solid fa-wallet momo-icon"></i>
+                                    break;
+                                case "Cash":
+                                    <i class="fa-solid fa-money-bill cash-icon"></i>
+                                    break;
+                            }
+                        </div>
+                        <div class="payment-info">
+                            <strong class="method-name">
+                                @(p.MethodType == "Cash" ? "Thanh toán tiền mặt" : p.Provider)
+                                <span class="type">(@p.MethodType)</span>
+                            </strong>
+                            @if (p.MethodType == "Bank")
+                            {
+                                <div class="account-number">Số tài khoản: <b>@p.AccountNumber</b></div>
+                            }
+                            else if (p.MethodType == "MoMo")
+                            {
+                                <div class="account-number">Số ví MoMo: <b>@p.AccountNumber</b></div>
+                            }
+                            @if (p.IsDefault)
+                            {
+                                <span class="badge-default">Mặc định</span>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="payment-actions">
+                        <a href="@Url.Action("Edit", "Payment", new { id = p.MethodID })" class="btn-action edit">✏️ Sửa</a>
+
+                        @if (!p.IsDefault)
+                        {
+                            <a href="@Url.Action("SetDefault", "Payment", new { id = p.MethodID })" class="btn-action set-default">⭐ Đặt mặc định</a>
+                        }
+
+                        <a href="@Url.Action("Delete", "Payment", new { id = p.MethodID })"
+                           class="btn-action delete"
+                           onclick="return confirm('Bạn có chắc muốn xóa phương thức này?');">🗑️ Xóa</a>
+                    </div>
+                </div>
+            }
+        }
+    </section>
+</main>
+
+<!-- MODAL THÊM -->
+<div id="modalAdd" class="modal-add">
+    <div class="modal-content">
+        <button class="btn-close" id="closeModal">×</button>
+        <h3>➕ Thêm phương thức thanh toán</h3>
+
+        <form method="post" action="@Url.Action("Add", "Payment")">
+            @Html.AntiForgeryToken()
+
+            <label>Loại phương thức</label>
+            <select name="methodType" id="methodType" class="form-control" required>
+                <option value="Bank">🏦 Ngân hàng</option>
+                <option value="MoMo">📱 Ví MoMo</option>
+                <option value="Cash">💵 Tiền mặt</option>
+            </select>
+
+            <div id="provider-group">
+                <label>Nhà cung cấp / Ngân hàng</label>
+                <input name="provider" id="provider" class="form-control" required />
+            </div>
+
+            <div id="account-group">
+                <label id="accLabel">Số tài khoản / Ví</label>
+                <input name="accountNumber" id="accountNumber" class="form-control" required />
+            </div>
+
+            <input type="hidden" name="isDefault" value="false" />
+            <label class="checkbox-label">
+                <input type="checkbox" name="isDefault" value="true" />
+                Đặt làm mặc định
+            </label>
+
+            <button type="submit" class="btn-primary">Lưu phương thức</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    const modal = document.getElementById("modalAdd");
+    const typeSelect = document.getElementById("methodType");
+    const providerGroup = document.getElementById("provider-group");
+    const accountGroup = document.getElementById("account-group");
+    const accLabel = document.getElementById("accLabel");
+
+    document.getElementById("btnAdd").onclick = () => modal.classList.add("active");
+    document.getElementById("closeModal").onclick = () => modal.classList.remove("active");
+    window.onclick = e => { if (e.target === modal) modal.classList.remove("active"); };
+
+    function updateForm() {
+        let t = typeSelect.value;
+        if (t === "Cash") {
+            providerGroup.style.display = accountGroup.style.display = "none";
+            document.getElementById("provider").required = false;
+            document.getElementById("accountNumber").required = false;
+        } else if (t === "MoMo") {
+            providerGroup.style.display = "none";
+            accountGroup.style.display = "block";
+            accLabel.innerText = "Số ví MoMo";
+            document.getElementById("accountNumber").required = true;
+        } else {
+            providerGroup.style.display = accountGroup.style.display = "block";
+            accLabel.innerText = "Số tài khoản";
+            document.getElementById("provider").required = true;
+            document.getElementById("accountNumber").required = true;
+        }
+    }
+    typeSelect.onchange = updateForm;
+    updateForm();
+</script>
+<style>
+    /* ==================================================
+   FULL ACCOUNT.CSS - ĐÃ FIX HOÀN TOÀN, ĐẸP LUNG LINH 2025
+   Bao gồm:
+   - Tiêu đề căn giữa + nút thêm căn phải (hoặc trái tùy chỉnh)
+   - Nút bo tròn xanh cyan
+   - Thông báo trống căn giữa, chữ xám nhạt, khung dashed
+   - Card thanh toán, địa chỉ, thông báo, hồ sơ... đồng bộ
+   - Modal mượt, responsive hoàn hảo
+================================================== */
+
+body {
+    background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+}
+
+/* Layout chính */
+.account-main {
+    max-width: 1180px;
+    margin: 40px auto;
+    display: flex;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Nội dung */
+.account-content {
+    flex: 1;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+/* Header: tiêu đề + nút thêm (tiêu đề căn giữa, nút căn phải) */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px; /* khoảng cách rộng rãi */
+}
+.page-header h2 {
+    margin: 0;
+    font-size: 28px;
+    color: #006064;
+    font-weight: 700;
+    flex: 1;
+    text-align: center;
+}
+
+/* Nút thêm - bo tròn xanh cyan */
+.btn-add, #btnAdd, #btnAddAddress {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 30px;
+    background: #00acc1;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,172,193,0.3);
+}
+.btn-add:hover, #btnAdd:hover, #btnAddAddress:hover {
+    background: #00838f;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,172,193,0.4);
+}
+
+/* Thông báo khi trống */
+  empty-box, .empty-state {
+        text-align: center;
+        padding: 80px 20px;
+        background: #f8fdfe;
+        border: 2px dashed #b2ebf2;
+        border-radius: 20px;
+        margin-top: 30px;
+    }
+
+    .empty-box p, .empty-state p {
+            font-size: 17px;
+            color: #888;
+            margin: 0;
+            font-weight: 500;
+        }
+
+/* Card thanh toán / địa chỉ */
+.payment-card, .address-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 26px;
+    background: white;
+    border: 2.5px solid #e0f7fa;
+    border-radius: 18px;
+    margin-bottom: 18px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+.payment-card:hover, .address-card:hover {
+    box-shadow: 0 12px 35px rgba(0,172,193,0.25);
+    transform: translateY(-4px);
+}
+.payment-card.default, .address-card.default {
+    border-color: #00acc1;
+    background: #e0f7fa;
+}
+
+/* Bên trái */
+.payment-left {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+.payment-icon {
+    font-size: 36px;
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1fcfd;
+    border: 2px solid #b2ebf2;
+    border-radius: 20px;
+}
+.bank-icon { color: #006064; }
+.momo-icon { color: #d81b60; }
+.cash-icon { color: #43a047; }
+
+.payment-info .method-name, .address-info strong {
+    font-size: 19px;
+    font-weight: 600;
+    color: #006064;
+    margin: 0 0 8px 0;
+}
+.payment-info .type, .address-info span {
+    font-size: 14.5px;
+    color: #777;
+}
+.account-number {
+    margin-top: 8px;
+    color: #444;
+    font-size: 16px;
+}
+.account-number b { color: #006064; font-weight: 600; }
+
+.badge-default {
+    background: #00acc1;
+    color: white;
+    padding: 6px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 50px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+/* Nút hành động */
+.payment-actions, .address-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+.btn-action, .btn-small {
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 14.5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+.btn-action.edit, .btn-edit {
+    background: #e3f2fd;
+    color: #1565c0;
+    border: 2px solid #90caf9;
+}
+.btn-action.edit:hover, .btn-edit:hover { background: #bbdefb; }
+.btn-action.set-default, .btn-default-set {
+    background: #fff3e0;
+    color: #e65100;
+    border: 2px solid #ffcc80;
+}
+.btn-action.set-default:hover, .btn-default-set:hover { background: #ffe0b2; }
+.btn-action.delete, .danger, .btn-delete {
+    background: #ffebee;
+    color: #c62828;
+    border: 2px solid #ef9a9a;
+}
+.btn-action.delete:hover, .danger:hover, .btn-delete:hover { background: #ffcdd2; }
+.btn-default-active {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 2px solid #a5d6a7;
+    cursor: default;
+}
+
+/* Modal */
+.modal-add {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+}
+.modal-add.active { display: flex; }
+
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 580px;
+    padding: 45px;
+    border-radius: 24px;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.28);
+    position: relative;
+    animation: modalShow 0.4s ease-out;
+}
+@@keyframes modalShow {
+    from { opacity: 0; transform: translateY(-70px) scale(0.92); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.modal-content h3 {
+    margin: 0 0 32px;
+    text-align: center;
+    font-size: 26px;
+    color: #006064;
+}
+
+/* Form */
+.form-control, select.form-control {
+    width: 100%;
+    padding: 17px 20px;
+    border: 2px solid #b2ebf2;
+    border-radius: 16px;
+    background: #f8fdfe;
+    font-size: 17px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+.form-control:focus, select.form-control:focus {
+    outline: none;
+    border-color: #00acc1;
+    background: white;
+    box-shadow: 0 0 0 6px rgba(0,172,193,0.22);
+}
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300acc1'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 20px;
+}
+
+/* Checkbox */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 24px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.checkbox-label input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    accent-color: #00acc1;
+}
+
+/* Nút đóng modal */
+.btn-close {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    background: none;
+    border: none;
+    font-size: 34px;
+    color: #bbb;
+    cursor: pointer;
+}
+.btn-close:hover { color: #333; }
+
+/* Responsive */
+@@media (max-width: 768px) {
+    .account-main { flex-direction: column; }
+    .page-header { flex-direction: column; gap: 20px; text-align: center; }
+    .page-header h2 { order: 2; }
+    .btn-add { order: 1; }
+    .payment-card, .address-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+    }
+    .payment-actions, .address-actions { width: 100%; justify-content: stretch; }
+    .btn-action, .btn-small { flex: 1; text-align: center; }
+}
+</style>

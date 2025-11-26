@@ -1,0 +1,86 @@
+﻿@model IEnumerable<HV_NIX.Models.Orders>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Danh sách đơn hàng";
+}
+
+@functions {
+    public string StatusText(string s)
+    {
+        switch (s)
+        {
+            case "Pending": return "Đang xử lý";
+            case "WaitingPayment": return "Chờ thanh toán";
+            case "Paid": return "Đã thanh toán";
+            case "Shipping": return "Đang giao hàng";
+            case "Completed": return "Hoàn thành";
+            case "Cancel": return "Đã hủy";
+            default: return "Không rõ";
+        }
+    }
+
+    public string StatusBadge(string s)
+    {
+        switch (s)
+        {
+            case "Paid": return "success";
+            case "WaitingPayment": return "warning";
+            case "Pending": return "secondary";
+            case "Shipping": return "info";
+            case "Completed": return "primary";
+            case "Cancel": return "danger";
+            default: return "dark";
+        }
+    }
+}
+
+<h2 class="mb-4"> Danh sách đơn hàng</h2>
+
+<table class="table table-bordered table-hover bg-white">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Họ tên</th>
+            <th>Số điện thoại</th>
+            <th>Tổng tiền</th>
+            <th>Ngày đặt</th>
+            <th>Trạng thái</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var o in Model)
+        {
+            <tr>
+                <td>@o.OrderID</td>
+
+                <!-- EMAIL -->
+                <td>@(o.User?.Email ?? "Không có")</td>
+
+                <!-- FULL NAME -->
+                <td>@(o.User?.UserInfo?.FullName ?? "Chưa cập nhật")</td>
+
+                <!-- PHONE -->
+                <td>@(o.User?.UserInfo?.Phone ?? "Chưa có")</td>
+
+                <td class="text-danger fw-bold">@o.Total.ToString("N0") ₫</td>
+
+                <td>@o.OrderDate.ToString("dd/MM/yyyy HH:mm")</td>
+
+                <td>
+                    <span class="badge bg-@StatusBadge(o.Status)">
+                        @StatusText(o.Status)
+                    </span>
+                </td>
+
+                <td>
+                    <a href="/AdminOrder/Details/@o.OrderID" class="btn btn-sm btn-primary">
+                        <i class="fa fa-eye"></i> Xem
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

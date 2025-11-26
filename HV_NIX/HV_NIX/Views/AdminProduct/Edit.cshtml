@@ -1,0 +1,171 @@
+﻿@model HV_NIX.Models.Products
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    /* ============================
+       CATEGORY BUTTONS WRAPPER
+       ============================ */
+    .category-buttons {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+
+    /* ============================
+       CATEGORY BUTTON STYLE
+       ============================ */
+    .cat-btn {
+        padding: 10px 18px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #27A4F2, #6586E5);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: .3px;
+        /* Hiệu ứng */
+        transition: all 0.25s ease;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    }
+
+        .cat-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+            opacity: .95;
+        }
+
+        /* ACTIVE BUTTON */
+        .cat-btn.active {
+            background: linear-gradient(135deg, #1E90FF, #5F6CE4);
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 15px rgba(100, 150, 255, 0.6);
+            transform: translateY(-2px);
+        }
+
+    /* ============================
+       REUSABLE INPUT STYLING
+       ============================ */
+    .form-control {
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-size: 15px;
+        border: 1px solid #d0d7e2;
+        transition: 0.25s ease;
+        box-shadow: none;
+    }
+
+        .form-control:focus {
+            border-color: #27A4F2;
+            box-shadow: 0 0 5px rgba(39,164,242, .4);
+        }
+
+    /* Label styling */
+    label {
+        font-weight: 600;
+        margin-bottom: 6px;
+        font-size: 15px;
+        color: #333;
+    }
+
+    /* ============================
+       HAVENIX BUTTON STYLE
+       ============================ */
+    .btn-havenix {
+        background: linear-gradient(135deg, #27A4F2, #6586E5);
+        color: #fff;
+        font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: none;
+        font-weight: 600;
+        letter-spacing: .5px;
+        transition: 0.25s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+        .btn-havenix:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            opacity: .95;
+        }
+
+    /* ============================
+       IMAGE PREVIEW
+       ============================ */
+    .edit-img-preview {
+        width: 120px;
+        height: 120px;
+        border-radius: 12px;
+        object-fit: cover;
+        box-shadow: 0 4px 10px rgba(0,0,0,.15);
+        border: 2px solid #fff;
+    }
+</style>
+
+
+<script>
+    function selectCategory(id, button) {
+        document.getElementById("CategoryID").value = id;
+
+        const allButtons = document.querySelectorAll(".cat-btn");
+        allButtons.forEach(btn => btn.classList.remove("active"));
+
+        button.classList.add("active");
+    }
+</script>
+
+<h2 class="mb-4">Sửa sản phẩm</h2>
+
+<form method="post" enctype="multipart/form-data">
+
+    <input type="hidden" name="ProductID" value="@Model.ProductID" />
+
+    <div class="mb-3">
+        <label>Tên sản phẩm</label>
+        <input type="text" name="ProductName" class="form-control" value="@Model.ProductName" required />
+    </div>
+
+    <!-- GIỮ ĐÚNG CHỈ 1 INPUT HIDDEN -->
+    <input type="hidden" id="CategoryID" name="CategoryID" value="@Model.CategoryID" />
+
+    <label>Danh mục</label>
+    <div class="category-buttons">
+
+        @foreach (var c in ViewBag.Categories as List<HV_NIX.Models.Category>)
+        {
+            var active = c.CategoryID == Model.CategoryID ? "active" : "";
+            <button type="button"
+                    class="cat-btn @active"
+                    onclick="selectCategory(@c.CategoryID, this)">
+                @c.CategoryName
+            </button>
+        }
+    </div>
+
+    <div class="mb-3">
+        <label>Giá</label>
+        <input type="number" name="Price" class="form-control" value="@Model.Price" required />
+    </div>
+
+    <div class="mb-3">
+        <label>Mô tả</label>
+        <textarea name="Description" class="form-control">@Model.Description</textarea>
+    </div>
+
+    <div class="mb-3">
+        <label>Ảnh hiện tại</label><br />
+        <img src="@Url.Content("~/Content/Images/" + Model.Thumbnail)"
+             style="width:120px;height:120px;border-radius:10px;object-fit:cover;" />
+    </div>
+
+    <div class="mb-3">
+        <label>Chọn ảnh mới (nếu muốn đổi)</label>
+        <input type="file" name="ThumbnailFile" class="form-control" accept="image/*" />
+    </div>
+
+    <button class="btn btn-havenix">Lưu thay đổi</button>
+</form>

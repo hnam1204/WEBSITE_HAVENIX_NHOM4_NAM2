@@ -1,0 +1,291 @@
+﻿@model HV_NIX.Models.Orders
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Thanh toán đơn hàng #" + Model.OrderID;
+}
+
+<link href="~/Content/payment-qr-final.css" rel="stylesheet" />
+
+<div class="payment-wrapper">
+    <div class="payment-card">
+
+        <!-- Header -->
+        <div class="header">
+            <h2>Thanh toán đơn hàng #@Model.OrderID</h2>
+            <p>Tổng tiền cần thanh toán</p>
+            <div class="amount">@String.Format("{0:N0}", ViewBag.Amount) ₫</div>
+        </div>
+
+        <!-- QR Code siêu đẹp -->
+        <div class="qr-container">
+            <div class="qr-frame">
+                <img src="@ViewBag.QR" alt="QR Thanh toán" class="qr-image" />
+                <!-- Nếu bạn muốn thêm logo ngân hàng nhỏ ở giữa QR -->
+                <!-- <img src="~/Content/images/vietcombank-logo.png" class="bank-logo" /> -->
+            </div>
+            <small>Quét mã bằng ứng dụng ngân hàng</small>
+        </div>
+
+        <!-- Nội dung chuyển khoản -->
+        <div class="transfer-info">
+            <label>Nội dung chuyển khoản</label>
+            <div class="content-box" id="contentText">@ViewBag.Content</div>
+            <button class="btn-copy" onclick="copyContent()">
+                <span>Sao chép nội dung</span>
+            </button>
+        </div>
+
+        <!-- Ghi chú -->
+        <div class="note">
+            Hệ thống tự động xác nhận trong vòng <b>1-3 phút</b> sau khi chuyển khoản thành công.
+        </div>
+
+        <!-- Các nút hành động -->
+        <div class="action-buttons">
+            <button class="btn-primary" onclick="checkPayment()">
+                Tôi đã chuyển khoản xong
+            </button>
+            <a href="/" class="btn-secondary">
+                Quay lại trang chủ
+            </a>
+        </div>
+
+        <!-- Loading khi đang kiểm tra -->
+        <div class="checking-hint" id="checkingHint" style="display:none;">
+            Đang kiểm tra thanh toán...
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+    function copyContent() {
+        navigator.clipboard.writeText('@ViewBag.Content');
+        alert('Đã sao chép nội dung chuyển khoản!');
+    }
+
+    // Kiểm tra thanh toán tự động mỗi 5 giây
+    setInterval(() => {
+        $.get("/Cart/CheckPaymentStatus", { id: @Model.OrderID }, function (res) {
+            console.log("Status:", res.status);
+
+            if (res.status === "Paid") {
+                document.getElementById('checkingHint').innerHTML = "Thanh toán thành công!";
+                document.getElementById('checkingHint').style.display = 'block';
+
+                setTimeout(() => {
+                    window.location.href = "/Cart/ThankYou/@Model.OrderID";
+                }, 1500);
+            }
+        });
+    }, 5000);
+
+    // Nút “Tôi đã chuyển khoản xong”
+ function checkPayment() {
+    document.getElementById('checkingHint').style.display = 'block';
+    document.getElementById('checkingHint').innerHTML = "Đang chuyển trang...";
+
+    setTimeout(() => {
+        window.location.href = "/Cart/ThankYou/@Model.OrderID";
+    }, 1500);
+}
+    </script>
+}
+
+
+<style>
+    /* ~/Content/payment-qr-final.css */
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+        font-family: 'Segoe UI', 'Roboto', sans-serif;
+        margin: 0;
+        padding: 20px 0;
+        min-height: 100vh;
+    }
+
+    .payment-wrapper {
+        max-width: 430px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .payment-card {
+        background: #FFFFFF;
+        border-radius: 28px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+
+    .header h2 {
+        margin: 0 0 8px;
+        font-size: 24px;
+        color: #1A365D;
+        font-weight: 600;
+    }
+
+    .header p {
+        margin: 0 0 12px;
+        color: #718096;
+        font-size: 15px;
+    }
+
+    .amount {
+        font-size: 42px;
+        font-weight: 800;
+        color: #E53E3E;
+        margin: 8px 0 30px;
+        letter-spacing: -1px;
+    }
+
+    /* QR Frame siêu đẹp */
+    .qr-container {
+        margin: 30px 0;
+    }
+
+    .qr-frame {
+        position: relative;
+        display: inline-block;
+        padding: 20px;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        border: 3px solid #F1F5F9;
+    }
+
+    .qr-image {
+        width: 240px;
+        height: 240px;
+        border-radius: 12px;
+    }
+
+    .bank-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .qr-container small {
+        display: block;
+        margin-top: 12px;
+        color: #666;
+        font-size: 14px;
+    }
+
+    /* Nội dung chuyển khoản */
+    .transfer-info label {
+        display: block;
+        margin-bottom: 10px;
+        color: #4A5568;
+        font-weight: 500;
+    }
+
+    .content-box {
+        background: #F7FAFC;
+        padding: 16px;
+        border-radius: 14px;
+        font-family: 'Courier New', monospace;
+        font-size: 19px;
+        font-weight: bold;
+        color: #2B6CB0;
+        border: 2px dashed #A0C4FF;
+        margin-bottom: 12px;
+        user-select: all;
+    }
+
+    .btn-copy {
+        background: #3182CE;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 12px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+        .btn-copy:hover {
+            background: #2B6CB0;
+        }
+
+    /* Nút hành động */
+    .action-buttons {
+        margin-top: 35px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .btn-primary {
+        background: #319795;
+        color: white;
+        border: none;
+        padding: 16px;
+        border-radius: 16px;
+        font-size: 17px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 6px 15px rgba(49, 151, 149, 0.3);
+    }
+
+        .btn-primary:hover {
+            background: #2C7A7B;
+            transform: translateY(-2px);
+        }
+
+    .btn-secondary {
+        display: block;
+        color: #4A5568;
+        text-decoration: none;
+        font-size: 15px;
+        padding: 12px;
+        border: 1px solid #E2E8F0;
+        border-radius: 14px;
+        transition: 0.3s;
+    }
+
+        .btn-secondary:hover {
+            background: #F7FAFC;
+            color: #2D3748;
+        }
+
+    .note {
+        margin: 25px 0;
+        font-size: 14px;
+        color: #718096;
+        line-height: 1.6;
+    }
+
+    .checking-hint {
+        margin-top: 20px;
+        color: #319795;
+        font-weight: 600;
+    }
+
+    /* Responsive */
+    @@media (max-width: 480px) {
+        .payment-card {
+            padding: 30px 20px;
+        }
+
+        .qr-image {
+            width: 200px;
+            height: 200px;
+        }
+
+        .amount {
+            font-size: 36px;
+        }
+    }
+</style>

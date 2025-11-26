@@ -1,0 +1,130 @@
+﻿@model List<HV_NIX.Models.ActivityLog>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Nhật ký hoạt động";
+}
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<style>
+    .page-header {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 25px;
+    }
+
+    .log-filter {
+        background: #fff;
+        padding: 15px;
+        border-radius: 14px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+        margin-bottom: 20px;
+    }
+
+    .table-logs {
+        background: #fff;
+        padding: 15px;
+        border-radius: 14px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    }
+
+    .badge-action {
+        background: #007bff;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .text-small {
+        font-size: 14px !important;
+    }
+</style>
+
+<div class="page-header">Nhật ký hoạt động</div>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+<!-- 🔍 BỘ LỌC -->
+<div class="log-filter">
+    <form method="get" class="row g-3">
+
+        <div class="col-md-4">
+            <label class="form-label fw-bold">Lọc theo hành động</label>
+            <select name="type" class="form-select">
+                <option value="">-- Tất cả hành động --</option>
+
+                @foreach (var act in ViewBag.ActionTypes as List<string>)
+                {
+                    <option value="@act"
+                            @(ViewBag.SelectedType == act ? "selected" : "")>
+                        @act
+                    </option>
+                }
+            </select>
+        </div>
+
+        <div class="col-md-2 d-flex align-items-end">
+            <button class="btn btn-primary w-100">
+                <i class="fa fa-filter"></i> Lọc
+            </button>
+        </div>
+
+    </form>
+</div>
+
+<!-- 📄 DANH SÁCH LOGS -->
+<div class="table-logs">
+    <table class="table table-bordered align-middle">
+        <thead class="table-light">
+            <tr>
+                <th width="60">ID</th>
+                <th width="120">Admin</th>
+                <th width="150">Hành động</th>
+                <th>Mô tả</th>
+                <th width="170">Thời gian</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var log in Model)
+            {
+                var time = log.CreatedAt.ToString("dd/MM/yyyy HH:mm");
+
+                <tr>
+                    <td>@log.LogID</td>
+
+                    <td>
+                        @if (log.User != null)
+                        {
+                            @log.User.Email
+                        }
+                        else
+                        {
+                            <span class="text-muted">Không xác định</span>
+                        }
+                    </td>
+
+                    <td>
+                        <span class="badge-action">@log.Action</span>
+                    </td>
+
+                    <td class="text-small">@log.Description</td>
+
+                    <td>@time</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

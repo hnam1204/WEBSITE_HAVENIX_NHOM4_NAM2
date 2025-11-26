@@ -1,0 +1,102 @@
+﻿@model HV_NIX.Models.Users
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Sửa tài khoản Admin";
+}
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<style>
+    .edit-container {
+        max-width: 550px;
+        margin: 20px auto;
+        background: #fff;
+        padding: 25px;
+        border-radius: 14px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    }
+
+    h2 {
+        font-weight: 700;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    label {
+        font-weight: 600;
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        padding: 10px 12px;
+        margin-bottom: 16px;
+        border: 1px solid #ddd;
+    }
+
+    .btn-save {
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        background: #007bff;
+        border: none;
+        font-size: 16px;
+        color: #fff;
+        font-weight: 600;
+        transition: .25s;
+        margin-top: 5px;
+    }
+
+        .btn-save:hover {
+            background: #0066d3;
+        }
+
+    .back-link {
+        display: inline-block;
+        margin-bottom: 15px;
+        color: #007bff;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+</style>
+
+<div class="edit-container">
+
+    <a href="/Admin/Accounts" class="back-link">
+        <i class="fa fa-arrow-left"></i> Quay lại
+    </a>
+
+    <h2>Sửa tài khoản</h2>
+
+    @using (Html.BeginForm("EditAccount", "Admin", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.UserID)
+
+        <!-- EMAIL -->
+        <label>Email</label>
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", required = "required" })
+
+        <!-- ROLE -->
+        <label>Quyền tài khoản</label>
+        <select class="form-control" name="Role" required>
+            <option value="Admin" @(Model.Role == "Admin" ? "selected" : "")>Admin</option>
+            <option value="User" @(Model.Role == "User" ? "selected" : "")>User</option>
+        </select>
+
+        <!-- PASSWORD (new) -->
+        <label>Mật khẩu mới (để trống nếu không đổi)</label>
+        <input type="password"
+               name="PasswordHash"
+               class="form-control"
+               placeholder="Nhập mật khẩu mới hoặc để trống">
+
+        <button type="submit" class="btn-save">
+            <i class="fa fa-save"></i> Lưu thay đổi
+        </button>
+    }
+</div>

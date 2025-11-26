@@ -1,0 +1,80 @@
+﻿@model List<HV_NIX.Models.Reviews>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Quản lý đánh giá";
+}
+
+<h2 class="mb-4">Quản lý đánh giá sản phẩm</h2>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+<table class="table table-bordered align-middle">
+    <thead class="table-light">
+        <tr>
+            <th>ID</th>
+            <th>Sản phẩm</th>
+            <th>Người dùng</th>
+            <th>Số sao</th>
+            <th>Nội dung</th>
+            <th>Phản hồi</th>
+            <th>Thời gian</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.ReviewID</td>
+
+                <td>
+                    <b>@r.Product.ProductName</b><br />
+                    <img src="@Url.Content("~/Content/Images/" + r.Product.Thumbnail)" width="60" />
+                </td>
+
+                <td>@r.User.Email</td>
+
+                <td>
+                    @for (int i = 1; i <= r.Rating; i++)
+                    {
+                        <i class="fa fa-star" style="color:#FFD700"></i>
+                    }
+                </td>
+
+                <td>@r.Comment</td>
+
+                <td>
+                    @if (!string.IsNullOrEmpty(r.AdminReply))
+                    {
+                        <div class="p-2 bg-light border rounded">@r.AdminReply</div>
+                    }
+                    else
+                    {
+                        <form method="post" action="/Admin/ReplyReview">
+                            <input type="hidden" name="id" value="@r.ReviewID" />
+
+                            <textarea name="reply" class="form-control" rows="2"
+                                      placeholder="Nhập phản hồi..."></textarea>
+
+                            <button class="btn btn-primary btn-sm mt-2">Gửi</button>
+                        </form>
+                    }
+                </td>
+
+                <td>@r.ReviewDate.ToString("dd/MM/yyyy HH:mm")</td>
+
+                <td>
+                    <a href="/Admin/DeleteReview/@r.ReviewID"
+                       onclick="return confirm('Xoá đánh giá này?')"
+                       class="btn btn-danger btn-sm">
+                        Xoá
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

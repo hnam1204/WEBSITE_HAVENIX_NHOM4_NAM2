@@ -1,0 +1,52 @@
+﻿@model HV_NIX.Models.Products
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="mb-4"> Thêm sản phẩm</h2>
+
+@using (Html.BeginForm("Create", "AdminProduct", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label>Tên sản phẩm</label>
+        @Html.TextBoxFor(m => m.ProductName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Danh mục</label>
+        @Html.DropDownListFor(m => m.CategoryID,
+            new SelectList(ViewBag.Categories, "CategoryID", "CategoryName"),
+            "-- Chọn danh mục --",
+            new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Giá</label>
+        @Html.TextBoxFor(m => m.Price, new { @class = "form-control", type = "number" })
+    </div>
+
+    <div class="form-group">
+        <label>Ảnh Thumbnail</label>
+        <input type="file" name="ThumbnailFile" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Ảnh 1</label>
+        <input type="file" name="Image1File" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Ảnh 2</label>
+        <input type="file" name="Image2File" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Mô tả</label>
+        @Html.TextAreaFor(m => m.Description, 5, 50, new { @class = "form-control" })
+    </div>
+
+    <button class="btn btn-primary" type="submit">Lưu</button>
+}

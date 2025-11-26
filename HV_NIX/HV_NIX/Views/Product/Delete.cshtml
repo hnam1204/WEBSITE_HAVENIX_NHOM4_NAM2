@@ -1,0 +1,32 @@
+﻿@model HV_NIX.Models.Products
+
+@{
+    ViewBag.Title = "Xóa sản phẩm";
+}
+
+<h2 class="text-danger">Bạn có chắc muốn xóa sản phẩm này?</h2>
+
+<div class="card p-3 mt-3" style="max-width: 500px;">
+    <h4>@Model.ProductName</h4>
+
+    <p><b>Giá:</b> @Model.Price.ToString("N0") đ</p>
+
+    <p><b>Danh mục:</b> @Model.Category?.CategoryName</p>
+
+    <p>
+        <b>Ảnh Thumbnail:</b><br />
+        <img src="~/Content/Images/@Model.Thumbnail"
+             style="width:150px;border:1px solid #ccc;border-radius:5px;" />
+    </p>
+
+    <p><b>Mô tả:</b><br /> @Model.Description</p>
+</div>
+
+@using (Html.BeginForm("DeleteConfirmed", "Product", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.ProductID)
+
+    <button type="submit" class="btn btn-danger mt-3">Xóa ngay</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary mt-3">Hủy</a>
+}

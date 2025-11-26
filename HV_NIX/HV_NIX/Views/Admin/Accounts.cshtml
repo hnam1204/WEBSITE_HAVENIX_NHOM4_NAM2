@@ -1,0 +1,196 @@
+﻿@model List<HV_NIX.Models.Users>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Quản lý tài khoản Admin";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<style>
+    .page-header {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 25px;
+    }
+
+    .table-admin {
+        background: #fff;
+        border-radius: 14px;
+        padding: 20px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    }
+
+    .badge-admin {
+        background: #007bff;
+        padding: 5px 10px;
+        border-radius: 8px;
+        color: #fff;
+        font-weight: 600;
+        font-size: 13px;
+    }
+
+    .badge-user {
+        background: #6c757d;
+        padding: 5px 10px;
+        border-radius: 8px;
+        color: #fff;
+        font-weight: 600;
+        font-size: 13px;
+    }
+
+    .status-online {
+        color: #28a745;
+        font-weight: 700;
+    }
+
+    .status-offline {
+        color: #6c757d;
+        font-weight: 600;
+    }
+
+    .btn-action {
+        padding: 6px 10px;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: 0.25s;
+    }
+
+    .btn-edit {
+        background: #ffc107;
+        color: #000;
+    }
+
+        .btn-edit:hover {
+            background: #e0a800;
+        }
+
+    .btn-delete {
+        background: #dc3545;
+        color: #fff;
+    }
+
+        .btn-delete:hover {
+            background: #bd2130;
+        }
+
+    .pw-box {
+        cursor: pointer;
+        color: #666;
+        font-weight: 600;
+    }
+</style>
+
+<div class="page-header">Danh sách tài khoản Admin / User</div>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+<div class="mb-3">
+    <a class="btn btn-primary" href="/Admin/CreateAccount">
+        <i class="fa fa-user-plus"></i> Tạo tài khoản Admin
+    </a>
+</div>
+
+<div class="table-admin">
+    <table class="table table-bordered align-middle">
+        <thead class="table-light">
+            <tr>
+                <th width="60">ID</th>
+                <th>Email</th>
+                <th width="160">Trạng thái</th>
+                <th width="200">Mật khẩu (ẩn)</th>
+                <th width="120">Quyền</th>
+                <th width="170">Ngày tạo</th>
+                <th width="160">Hành động</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var u in Model)
+            {
+                DateTime createdTime;
+                bool parsed = DateTime.TryParse(u.CreatedAt.ToString(), out createdTime);
+                string createdFormatted = parsed ? createdTime.ToString("dd/MM/yyyy HH:mm") : "";
+
+                bool isLogged = Session["AdminID"] != null && (int)Session["AdminID"] == u.UserID;
+
+                <tr>
+                    <td>@u.UserID</td>
+
+                    <td>@u.Email</td>
+
+                    <!-- ⭐ TRẠNG THÁI ONLINE/OFFLINE -->
+                    <td>
+                        @if (isLogged)
+                        {
+                            <span class="status-online">Đang hoạt động</span>
+                        }
+                        else
+                        {
+                            <span class="status-offline">Không hoạt động</span>
+                        }
+                    </td>
+
+                    <!-- Mật khẩu -->
+                    <td>
+                        <span id="pw-hide-@u.UserID" class="pw-box">••••••••••</span>
+                        <span id="pw-real-@u.UserID" class="pw-box" style="display:none;">
+                            @u.PasswordHash
+                        </span>
+
+                        <i class="fa fa-eye ms-2" style="cursor:pointer;"
+                           onclick="togglePW(@u.UserID)"></i>
+                    </td>
+
+                    <td>
+                        @if (u.Role == "Admin")
+                        {
+                            <span class="badge-admin">Admin</span>
+                        }
+                        else
+                        {
+                            <span class="badge-user">User</span>
+                        }
+                    </td>
+
+                    <td>@createdFormatted</td>
+
+                    <td>
+                        @if (isLogged)
+                        {
+                            <span class="text-muted">Không khả dụng</span>
+                        }
+                        else
+                        {
+                            <a class="btn-action btn-edit" href="/Admin/EditAccount/@u.UserID">
+                                <i class="fa fa-edit"></i> Sửa
+                            </a>
+                            <a class="btn-action btn-delete"
+                               onclick="return confirm('Bạn chắc chắn muốn xóa tài khoản này?')"
+                               href="/Admin/DeleteAccount/@u.UserID">
+                                <i class="fa fa-trash"></i> Xóa
+                            </a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function togglePW(id) {
+        const hide = document.getElementById("pw-hide-" + id);
+        const real = document.getElementById("pw-real-" + id);
+
+        hide.style.display = hide.style.display === "none" ? "inline" : "none";
+        real.style.display = real.style.display === "none" ? "inline" : "none";
+    }
+</script>

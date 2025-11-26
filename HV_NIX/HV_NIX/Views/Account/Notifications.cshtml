@@ -1,0 +1,91 @@
+﻿@model List<HV_NIX.Models.Notification>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .notify-wrapper {
+        max-width: 900px;
+        margin: 30px auto;
+        background: #fff;
+        padding: 25px;
+        border-radius: 14px;
+        box-shadow: 0px 8px 25px rgba(0,0,0,0.06);
+        animation: fadeIn 0.4s ease;
+    }
+
+    .notify-title {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .notify-title i {
+        color: #007bff;
+    }
+
+    .notify-item {
+        background: #f8faff;
+        padding: 18px 20px;
+        border-radius: 12px;
+        margin-bottom: 18px;
+        border-left: 5px solid #007bff;
+        transition: 0.25s;
+    }
+
+        .notify-item:hover {
+            background: #eef3ff;
+            transform: translateX(4px);
+        }
+
+    .notify-item h5 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 700;
+        color: #1a3d7c;
+    }
+
+    .notify-item p {
+        margin: 6px 0;
+        color: #444;
+        font-size: 15px;
+    }
+
+    .notify-date {
+        font-size: 13px;
+        color: #777;
+    }
+
+    @@keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
+<div class="notify-wrapper">
+    <div class="notify-title">
+        <i class="fa fa-bell"></i> Thông báo của bạn
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-secondary text-center p-4">
+            <i class="fa fa-inbox fa-2x mb-2"></i><br />
+            Không có thông báo nào.
+        </div>
+    }
+
+    @foreach (var n in Model)
+    {
+        <div class="notify-item">
+            <h5>@n.Title</h5>
+            <p>@n.Message</p>
+            <div class="notify-date">
+                @n.CreatedAt.ToString("dd/MM/yyyy HH:mm")
+            </div>
+        </div>
+    }
+</div>

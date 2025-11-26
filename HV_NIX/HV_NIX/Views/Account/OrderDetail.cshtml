@@ -1,0 +1,196 @@
+﻿@model HV_NIX.Models.Orders
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var details = Model.Details.ToList();
+}
+
+<style>
+    :root {
+        --primary: #2BAA67;
+        --red: #E53935;
+        --text: #1A365D;
+        --text-light: #555;
+        --bg: #F4F8FF;
+        --card: #FFF;
+        --radius: 20px;
+        --shadow: 0 8px 22px rgba(0,0,0,0.08);
+    }
+
+    body {
+        background: var(--bg);
+        font-family: 'Segoe UI';
+    }
+
+    .order-wrapper {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .order-card {
+        background: var(--card);
+        padding: 30px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+    }
+
+    .order-title {
+        font-size: 26px;
+        font-weight: 800;
+        color: var(--text);
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .order-status {
+        text-align: center;
+        font-size: 15px;
+        color: var(--red);
+        margin-bottom: 25px;
+    }
+
+    .info-box {
+        background: #F3F7FF;
+        padding: 15px;
+        border-radius: 14px;
+        margin-bottom: 20px;
+    }
+
+        .info-box div {
+            margin-bottom: 6px;
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+    .product-item {
+        display: flex;
+        align-items: center;
+        padding: 14px 0;
+        border-bottom: 1px solid #eee;
+        gap: 16px;
+    }
+
+        .product-item img {
+            width: 75px;
+            height: 75px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+    .product-info {
+        flex: 1;
+    }
+
+    .name {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--text);
+    }
+
+    .sub {
+        font-size: 14px;
+        color: var(--text-light);
+    }
+
+    .price {
+        font-size: 17px;
+        color: var(--red);
+        font-weight: 700;
+        text-align: right;
+        width: 120px;
+    }
+
+    .total-box {
+        text-align: right;
+        margin-top: 20px;
+        border-top: 2px dashed #ccc;
+        padding-top: 20px;
+    }
+
+        .total-box .label {
+            font-size: 16px;
+            color: var(--text-light);
+        }
+
+        .total-box .total {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--red);
+        }
+
+    .btn-back {
+        margin-top: 25px;
+        display: block;
+        width: 100%;
+        background: var(--primary);
+        color: white;
+        padding: 14px;
+        text-align: center;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: 700;
+        text-decoration: none;
+    }
+</style>
+
+
+<div class="order-wrapper">
+    <div class="order-card">
+
+        <div class="order-title">
+            Chi tiết đơn hàng #@Model.OrderID
+        </div>
+
+        <div class="order-status">
+            Trạng thái: <strong>@Model.Status</strong>
+        </div>
+
+        <!-- Thông tin giao hàng -->
+        <h3 style="color: var(--text); margin-top:25px;">Thông tin giao hàng</h3>
+        <div class="info-box">
+            <div><strong>Họ tên:</strong> @Model.User.UserInfo.FullName</div>
+            <div><strong>SĐT:</strong> @Model.User.UserInfo.Phone</div>
+            <div><strong>Địa chỉ:</strong> @Model.User.UserInfo.Address</div>
+            <div><strong>Quận/Huyện:</strong> @Model.User.UserInfo.District</div>
+            <div><strong>Email:</strong> @Model.User.UserInfo.Email</div>
+        </div>
+
+        <!-- Sản phẩm trong đơn -->
+        <h3 style="color: var(--text);">Sản phẩm</h3>
+
+        @foreach (var item in details)
+        {
+            var p = item.Product;
+            var img = Url.Content("~/Content/Images/" + p.Thumbnail);
+
+            <div class="product-item">
+                <img src="@img" alt="@p.ProductName"
+                     onerror="this.onerror=null;this.src='@Url.Content("~/Content/Images/no-image.png")';" />
+
+                <div class="product-info">
+                    <div class="name">@p.ProductName</div>
+                    <div class="sub">Size: @item.Size</div>
+                    <div class="sub">SL: @item.Quantity × @String.Format("{0:N0}", item.Price) ₫</div>
+                </div>
+
+                <div class="price">
+                    @String.Format("{0:N0}", item.Price * item.Quantity) ₫
+                </div>
+            </div>
+        }
+
+        <!-- Tổng tiền -->
+        <div class="total-box">
+            <div class="label">Tổng thanh toán:</div>
+            <div class="total">
+                @String.Format("{0:N0}", Model.Total) ₫
+            </div>
+        </div>
+
+        <a href="@Url.Action("OrderHistory","Account")" class="btn-back">
+            ← Quay lại danh sách đơn hàng
+        </a>
+
+    </div>
+</div>

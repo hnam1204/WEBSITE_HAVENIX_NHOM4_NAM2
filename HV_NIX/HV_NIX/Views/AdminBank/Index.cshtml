@@ -1,0 +1,199 @@
+﻿@model IEnumerable<HV_NIX.Models.Orders>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="mb-4"> Xác minh thanh toán ngân hàng</h2>
+
+<!-- FORM LỌC -->
+<form class="row mb-3" method="get">
+    <div class="col-md-3">
+        <label>Từ ngày</label>
+        <input type="date" name="from" class="form-control" />
+    </div>
+    <div class="col-md-3">
+        <label>Đến ngày</label>
+        <input type="date" name="to" class="form-control" />
+    </div>
+    <div class="col-md-2">
+        <label>Min (₫)</label>
+        <input type="number" name="min" class="form-control" />
+    </div>
+    <div class="col-md-2">
+        <label>Max (₫)</label>
+        <input type="number" name="max" class="form-control" />
+    </div>
+    <div class="col-md-2 d-flex align-items-end">
+        <button class="btn btn-primary w-100">Lọc</button>
+    </div>
+</form>
+
+<table class="table table-bordered table-hover bg-white">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Họ tên</th>
+            <th>Điện thoại</th>
+            <th>Tổng tiền</th>
+            <th>Ngày đặt</th>
+            <th>Nội dung CK</th>
+            <th>Xác minh</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var o in Model)
+        {
+            <tr>
+                <td>@o.OrderID</td>
+
+                <td>@(o.User?.Email ?? "Không có")</td>
+
+                <td>@(o.UserInfo?.FullName ?? "Không có")</td>
+
+                <td>@(o.UserInfo?.Phone ?? "Không có")</td>
+
+                <td>@o.Total.ToString("N0") ₫</td>
+
+                <td>@o.OrderDate.ToString("dd/MM/yyyy HH:mm")</td>
+
+                <td class="ck-content">@o.PaymentCode</td>
+
+                <td>
+                    <a href="/AdminBank/MarkPaid/@o.OrderID"
+                       class="btn btn-success btn-sm"
+                       onclick="return confirm('Xác nhận thanh toán đơn này?')">
+                        Xác nhận
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        Không có đơn hàng cần xác minh.
+    </div>
+}
+
+
+<!-- REAL-TIME -->
+<script>
+    setInterval(() => {
+        $.get("/AdminBank/NewOrderCount", function (res) {
+            if (res.pending > 0) {
+                document.title = `(${res.pending}) Có đơn mới cần xác minh`;
+            }
+        });
+    }, 10000);
+</script>
+<style>
+
+    :root {
+        --primary: #00C4B4;
+        --primary-dark: #00A89A;
+        --primary-light: #C8EEF5;
+        --radius: 16px;
+        --shadow: 0 10px 35px rgba(0,196,180,0.12);
+    }
+
+    /* ============================ */
+    /* 🔥 TIÊU ĐỀ */
+    h2.mb-4 {
+        font-weight: 800;
+        font-size: 28px;
+        color: var(--primary);
+        margin-bottom: 18px;
+    }
+
+    /* ============================ */
+    /* 🔍 FORM LỌC */
+    .row.mb-3 {
+        background: white;
+        padding: 24px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        margin-bottom: 30px;
+    }
+
+        .row.mb-3 label {
+            font-weight: 600;
+        }
+
+        .row.mb-3 .form-control {
+            height: 50px;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            padding: 0 16px;
+        }
+
+        .row.mb-3 button {
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 6px 20px rgba(0,196,180,0.3);
+        }
+
+    /* ============================ */
+    /* 📄 BẢNG */
+    .table {
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+    }
+
+        .table thead {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+
+        .table td, .table th {
+            padding: 18px 16px !important;
+            font-size: 15px;
+        }
+
+    /* ⭐ Nội dung CK nổi bật */
+    .ck-content {
+        font-family: 'Courier New', monospace;
+        background: var(--primary-light);
+        color: var(--primary);
+        padding: 8px 14px !important;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+
+    /* ============================ */
+    /* ⚠️ ALERT */
+    .alert-info {
+        background: #ecfeff;
+        border: 1px solid var(--primary-light);
+        color: #0c4a6b;
+        border-radius: var(--radius);
+        padding: 30px;
+        font-size: 17px;
+        box-shadow: var(--shadow);
+    }
+
+    /* ============================ */
+    /* 🟢 BUTTON */
+    .table .btn-success {
+        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        border: none;
+        padding: 9px 18px;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 14px;
+        box-shadow: 0 4px 15px rgba(0,196,180,0.3);
+    }
+
+        .table .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,196,180,0.4);
+        }
+</style>

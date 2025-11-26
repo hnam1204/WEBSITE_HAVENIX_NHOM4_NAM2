@@ -1,0 +1,185 @@
+﻿@model HV_NIX.Models.DashboardVM
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="mb-4" style="font-weight:600;"> Dashboard</h2>
+
+<div class="row">
+
+    <!-- Tổng người dùng -->
+    <div class="col-md-3 mb-3">
+        <div class="card-box" style="background: linear-gradient(135deg,#27A4F2,#6CC2F7); color:white;">
+            <h6>Tổng người dùng</h6>
+            <h2>@Model.TotalUsers</h2>
+        </div>
+    </div>
+
+    <!-- Tổng sản phẩm -->
+    <div class="col-md-3 mb-3">
+        <div class="card-box" style="background: linear-gradient(135deg,#3BAEF4,#91A8ED); color:white;">
+            <h6>Tổng sản phẩm</h6>
+            <h2>@Model.TotalProducts</h2>
+        </div>
+    </div>
+
+    <!-- Tổng đơn hàng -->
+    <div class="col-md-3 mb-3">
+        <div class="card-box" style="background: linear-gradient(135deg,#6586E5,#27A4F2); color:white;">
+            <h6>Tổng đơn hàng</h6>
+            <h2>@Model.TotalOrders</h2>
+        </div>
+    </div>
+
+    <!-- Doanh thu hôm nay -->
+    <div class="col-md-3 mb-3">
+        <div class="card-box" style="background: linear-gradient(135deg,#9FD7F9,#27A4F2); color:white;">
+            <h6>Doanh thu hôm nay</h6>
+            <h2>@Model.RevenueToday.ToString("N0") đ</h2>
+        </div>
+    </div>
+
+</div>
+
+<!-- Sản phẩm bán chạy nhất -->
+<h3 class="mt-4 mb-3" style="font-weight:600;"> Sản phẩm bán chạy nhất</h3>
+
+@if (Model.BestProduct != null)
+{
+    <div class="card-box d-flex align-items-center" style="background:white;">
+        <img src="@Url.Content("~/Content/Images/" + Model.BestProduct.Thumbnail)"
+             style="width:120px;height:120px;border-radius:10px;object-fit:cover;margin-right:20px;" />
+
+        <div>
+            <h4 style="color:#0A84FF">@Model.BestProduct.ProductName</h4>
+            <p>Đã bán: <b>@Model.BestProduct.Sold</b></p>
+        </div>
+    </div>
+}
+else
+{
+    <p class="text-muted">Chưa có dữ liệu sản phẩm bán chạy.</p>
+}
+
+<!-- BIỂU ĐỒ -->
+<div class="row mt-5">
+
+    <!-- Doanh thu -->
+    <div class="col-md-6">
+        <div class="card-box">
+            <h5 class="mb-3">Doanh thu 7 ngày gần nhất</h5>
+            <canvas id="revenueChart" height="150"></canvas>
+        </div>
+    </div>
+
+    <!-- Số đơn hàng theo từng ngày -->
+    <div class="col-md-6">
+        <div class="card-box">
+            <h5 class="mb-3">Số đơn hàng theo từng ngày</h5>
+            <canvas id="orderDayChart" height="150"></canvas>
+        </div>
+    </div>
+
+</div>
+
+<!-- TOP SẢN PHẨM THEO NGÀY -->
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="card-box">
+            <h5 class="mb-3">Top 5 sản phẩm bán chạy theo từng ngày</h5>
+            <canvas id="topProductChart" height="140"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+    /* ================================
+       1) BIỂU ĐỒ DOANH THU 7 NGÀY
+    ================================= */
+    fetch('/Admin/RevenueLast7Days')
+        .then(res => res.json())
+        .then(data => {
+            new Chart(document.getElementById('revenueChart'), {
+                type: 'line',
+                data: {
+                    labels: data.map(x => x.Date),
+                    datasets: [{
+                        label: 'Doanh thu (đ)',
+                        data: data.map(x => x.Total),
+                        borderWidth: 3,
+                        borderColor: '#0A84FF',
+                        backgroundColor: 'rgba(10,132,255,0.2)',
+                        tension: 0.4
+                    }]
+                }
+            });
+        });
+
+    /* ================================
+       2) SỐ ĐƠN HÀNG THEO NGÀY
+    ================================= */
+    fetch('/Admin/OrdersLast7Days')
+        .then(res => res.json())
+        .then(data => {
+            new Chart(document.getElementById('orderDayChart'), {
+                type: 'bar',
+                data: {
+                    labels: data.map(x => x.Date),
+                    datasets: [{
+                        label: 'Số đơn hàng',
+                        data: data.map(x => x.Count),
+                        backgroundColor: 'rgba(255,150,0,0.7)',
+                        borderColor: 'rgb(255,150,0)',
+                        borderWidth: 2,
+                        borderRadius: 8
+                    }]
+                }
+            });
+        });
+
+    /* ================================
+       3) TOP 5 SP BÁN CHẠY THEO NGÀY
+    ================================= */
+    fetch('/Admin/TopProductsLast7Days')
+        .then(res => res.json())
+        .then(full => {
+
+            const labels = full.map(x => x.Date);
+            const datasets = [];
+
+            const allProducts = {};
+            const colors = ["#0A84FF", "#27A4F2", "#8B5CF6", "#F43F5E", "#F59E0B"];
+
+            full.forEach((day, indexDay) => {
+                day.Products.forEach(p => {
+                    if (!allProducts[p.Name]) {
+                        allProducts[p.Name] = Array(full.length).fill(0);
+                    }
+                    allProducts[p.Name][indexDay] = p.Sold;
+                });
+            });
+
+            let c = 0;
+            for (let name in allProducts) {
+                datasets.push({
+                    label: name,
+                    data: allProducts[name],
+                    borderColor: colors[c % colors.length],
+                    backgroundColor: colors[c % colors.length],
+                    borderWidth: 3,
+                    tension: 0.3
+                });
+                c++;
+            }
+
+            new Chart(document.getElementById('topProductChart'), {
+                type: 'line',
+                data: { labels: labels, datasets: datasets }
+            });
+
+        });
+
+</script>

@@ -1,0 +1,124 @@
+﻿@model IEnumerable<HV_NIX.Models.Orders>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="mb-4"> Lịch sử xác minh thanh toán</h2>
+
+<table class="table table-bordered table-hover bg-white">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Họ tên</th>
+            <th>Số điện thoại</th>
+            <th>Tổng tiền</th>
+            <th>Ngày thanh toán</th>
+            <th>Nội dung CK</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var o in Model)
+        {
+            <tr>
+                <td>@o.OrderID</td>
+
+                <td>@(o.User?.Email ?? "Không có")</td>
+
+                <td>@(o.UserInfo?.FullName ?? "Không có")</td>
+
+                <td>@(o.UserInfo?.Phone ?? "Không có")</td>
+
+                <td>@o.Total.ToString("N0") ₫</td>
+
+                <td>
+                   @(o.PaidDate.HasValue
+        ? o.PaidDate.Value.ToString("dd/MM/yyyy hh:mm:ss tt")
+        : "—")
+                </td>
+
+
+                <td class="ck-content">@o.PaymentCode</td>
+            </tr>
+
+    }
+        </tbody>
+    </table>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        Không có đơn đã xác minh.
+    </div>
+}
+
+<style>
+    :root {
+        --primary: #00C4B4;
+        --primary-dark: #00A89A;
+        --primary-light: #C8EEF5;
+        --radius: 18px;
+        --shadow: 0 10px 35px rgba(0,196,180,0.12);
+    }
+
+    h2.mb-4 {
+        font-weight: 800;
+        font-size: 30px;
+        color: var(--primary);
+        margin-bottom: 15px;
+    }
+
+    .table {
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+    }
+
+        .table thead {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+
+        .table th {
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 16px;
+            border: none;
+        }
+
+        .table td {
+            padding: 16px;
+            border-bottom: 1px solid #eef5f7;
+            font-size: 15px;
+            vertical-align: middle;
+        }
+
+        .table tbody tr:hover {
+            background: #f8fbff;
+            transform: scale(1.01);
+            transition: 0.2s;
+        }
+
+    .ck-content {
+        font-family: 'Courier New', monospace;
+        background: var(--primary-light);
+        color: var(--primary);
+        padding: 8px 14px;
+        border-radius: 10px;
+        font-weight: bold;
+        display: inline-block;
+    }
+
+    .alert-info {
+        margin-top: 25px;
+        padding: 25px;
+        border-radius: var(--radius);
+        background: #ecfeff;
+        border: 1px solid var(--primary-light);
+        color: #0c4a6b;
+        font-size: 17px;
+        text-align: center;
+    }
+</style>

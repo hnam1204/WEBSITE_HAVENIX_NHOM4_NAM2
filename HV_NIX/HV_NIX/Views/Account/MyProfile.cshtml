@@ -1,0 +1,190 @@
+﻿@model HV_NIX.Models.UserInfo
+@{
+    ViewBag.Title = "Thông tin cá nhân";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/account.css" />
+
+<main class="account-main">
+
+    @Html.Partial("_AccountSidebar")
+
+    <section class="account-content">
+
+        <h2>Hồ sơ cá nhân</h2>
+
+        <!-- Thông báo -->
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert-success">@TempData["Success"]</div>
+        }
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert-danger">@TempData["Error"]</div>
+        }
+
+        <form method="post" action="@Url.Action("MyProfile", "Account")">
+            @Html.AntiForgeryToken()
+
+            <!-- Họ tên -->
+            <label for="FullName">Họ và tên</label>
+            @Html.TextBoxFor(m => m.FullName, new
+            {
+                @class = "form-control",
+                placeholder = "Nhập họ và tên đầy đủ"
+            })
+
+            <!-- Số điện thoại -->
+            <label for="Phone">Số điện thoại</label>
+            @Html.TextBoxFor(m => m.Phone, new
+            {
+                @class = "form-control",
+                placeholder = "VD: 0987 654 321"
+            })
+
+            <!-- Địa chỉ -->
+            <label for="Address">Địa chỉ</label>
+            @Html.TextBoxFor(m => m.Address, new
+            {
+                @class = "form-control",
+                placeholder = "Nhập địa chỉ hiện tại"
+            })
+
+            <!-- Nút lưu -->
+            <button type="submit" class="btn-primary">
+                 Lưu thay đổi
+            </button>
+
+        </form>
+    </section>
+
+</main>
+<style>
+    /* ==================================================
+   ACCOUNT.CSS - HỒ SƠ CÁ NHÂN + TOÀN BỘ TRANG TÀI KHOẢN
+   ĐÃ FIX 100% LỖI, ĐẸP LUNG LINH 2025
+   Dán toàn bộ vào ~/Content/account.css (thay thế hoặc thêm vào cuối)
+================================================== */
+body {
+    background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+}
+
+/* Layout chính */
+.account-main {
+    max-width: 1180px;
+    margin: 40px auto;
+    display: flex;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Nội dung */
+.account-content {
+    flex: 1;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+.account-content h2 {
+    font-size: 28px;
+    color: #006064;
+    text-align: center;
+    margin-bottom: 50px; /* khoảng cách rộng rãi */
+}
+
+/* Thông báo */
+.alert-success, .alert-danger {
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    font-size: 15.5px;
+    text-align: center;
+    font-weight: 500;
+}
+.alert-success {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+.alert-danger {
+    background: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+}
+
+/* Label */
+.account-content label {
+    display: block;
+    margin: 24px 0 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 15.5px;
+}
+
+/* Input */
+.account-content .form-control {
+    width: 100%;
+    padding: 16px 18px;
+    border: 2px solid #b2ebf2;
+    border-radius: 14px;
+    background: #f8fdfe;
+    font-size: 16.5px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+.account-content .form-control:focus {
+    outline: none;
+    border-color: #00acc1;
+    background: white;
+    box-shadow: 0 0 0 5px rgba(0,172,193,0.22);
+}
+.account-content .form-control::placeholder {
+    color: #aaa;
+}
+
+/* Nút lưu */
+.account-content .btn-primary {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    margin-top: 40px;
+    background: #00acc1;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.account-content .btn-primary:hover {
+    background: #00838f;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,172,193,0.4);
+}
+
+/* Khi trống / empty state (nếu cần) */
+.empty-box, .empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    background: #f8fdfe;
+    border: 2px dashed #b2ebf2;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+.empty-box p, .empty-state p {
+    font-size: 17px;
+    color: #888;
+    margin: 0;
+}
+
+/* Responsive */
+@@media (max-width: 768px) {
+    .account-main { flex-direction: column; }
+    .account-content { padding: 30px 25px; }
+}
+</style>

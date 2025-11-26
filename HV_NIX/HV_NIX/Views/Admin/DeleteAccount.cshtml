@@ -1,0 +1,35 @@
+﻿@model HV_NIX.ViewModels.AdminCheckVM
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card p-4" style="max-width:500px;margin:30px auto;">
+    <h3 class="mb-3 text-danger">
+        <i class="fa fa-exclamation-triangle"></i> Xác nhận xoá Admin
+    </h3>
+
+    <p>
+        Bạn sắp xoá tài khoản:
+        <strong>@ViewBag.DeleteUser.Email</strong>
+    </p>
+
+    <p class="text-muted">
+        Hãy nhập mật khẩu của **một trong 3 Admin cấp cao nhất** để xác nhận.
+    </p>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+
+    <form method="post" action="/Admin/ConfirmDeleteAdmin">
+        <input type="hidden" name="DeleteUserID" value="@ViewBag.DeleteUser.UserID" />
+
+        <label>Mật khẩu Admin cấp cao</label>
+        <input type="password" name="ConfirmPassword" class="form-control mb-3" required />
+
+        <button class="btn btn-danger w-100">
+            <i class="fa fa-trash"></i> Xác nhận xoá
+        </button>
+    </form>
+</div>

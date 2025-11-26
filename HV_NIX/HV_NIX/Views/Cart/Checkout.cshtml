@@ -1,0 +1,318 @@
+﻿@model List<HV_NIX.Models.CartItems>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var info = ViewBag.Info as HV_NIX.Models.UserInfo;
+    decimal total = (decimal)ViewBag.TotalAmount;
+}
+
+<style>
+    /* ================== CHECKOUT NHẬP THÔNG TIN – ĐẸP CHUẨN 2025 ================== */
+    :root {
+        --bg: #E3F2FD;
+        --card: #FFFFFF;
+        --primary: #319795;
+        --red: #E53E3E;
+        --text: #1A365D;
+        --text-light: #718096;
+        --border: #E2E8F0;
+        --radius: 24px;
+        --shadow: 0 15px 35px rgba(0,0,0,0.08);
+        --input-bg: #F8FAFC;
+    }
+
+    body {
+        background: var(--bg);
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        margin: 0;
+        padding: 20px 0;
+        min-height: 100vh;
+    }
+
+    .checkout-wrapper {
+        max-width: 540px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .checkout-card {
+        background: var(--card);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 40px 35px;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .checkout-card h2 {
+        margin: 0 0 10px;
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--text);
+    }
+
+    .checkout-card > p {
+        margin: 0 0 35px;
+        color: var(--text-light);
+        font-size: 15px;
+    }
+
+    form {
+        text-align: left;
+    }
+
+    h3 {
+        font-size: 19px;
+        font-weight: 600;
+        color: var(--text);
+        margin: 35px 0 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #BBDEFB;
+    }
+
+    label {
+        display: block;
+        margin: 18px 0 8px;
+        font-weight: 600;
+        color: var(--text-light);
+        font-size: 15px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+        width: 100%;
+        padding: 15px 16px;
+        border: 2px solid var(--border);
+        border-radius: 16px;
+        background: var(--input-bg);
+        font-size: 16px;
+        color: var(--text);
+        transition: all 0.3s ease;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: var(--primary);
+        background: #fff;
+        box-shadow: 0 0 0 5px rgba(49,151,149,0.15);
+    }
+
+    /* Radio thanh toán */
+    .payment-options {
+        margin: 20px 0;
+    }
+
+    .payment-options label {
+        display: flex;
+        align-items: center;
+        padding: 16px 18px;
+        background: var(--input-bg);
+        border-radius: 16px;
+        margin-bottom: 14px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    .payment-options label:hover {
+        background: #E3F2FD;
+        transform: translateX(6px);
+    }
+
+    .payment-options input[type="radio"] {
+        margin-right: 16px;
+        accent-color: var(--primary);
+        transform: scale(1.4);
+    }
+
+    /* Nút hoàn tất */
+    .btn-submit {
+        display: block;
+        width: 100%;
+        margin-top: 40px;
+        padding: 20px;
+        background: var(--primary);
+        color: white;
+        font-size: 19px;
+        font-weight: 700;
+        border: none;
+        border-radius: 18px;
+        cursor: pointer;
+        box-shadow: 0 12px 35px rgba(49,151,149,0.4);
+        transition: all 0.3s ease;
+    }
+
+    .btn-submit:hover {
+        background: #2C7A7B;
+        transform: translateY(-5px);
+        box-shadow: 0 18px 45px rgba(49,151,149,0.5);
+    }
+
+    /* Tóm tắt đơn hàng */
+    .order-summary {
+        margin-top: 40px;
+        background: var(--input-bg);
+        border-radius: 20px;
+        padding: 28px;
+    }
+
+    .order-summary h3 {
+        text-align: center;
+        margin: 0 0 22px;
+        border-bottom: none;
+        font-size: 20px;
+    }
+
+    .order-item {
+        display: flex;
+        align-items: center;
+        padding: 14px 0;
+        border-bottom: 1px dashed #ddd;
+    }
+
+    .order-item:last-child { border-bottom: none; }
+
+    .order-item img {
+        width: 64px;
+        height: 64px;
+        object-fit: cover;
+        border-radius: 14px;
+        margin-right: 16px;
+        border: 1px solid #eee;
+        flex-shrink: 0;
+    }
+
+    .item-info {
+        flex: 1;
+    }
+
+    .item-name {
+        font-weight: 600;
+        font-size: 16px;
+        color: var(--text);
+    }
+
+    .item-detail {
+        font-size: 14px;
+        color: var(--text-light);
+        margin-top: 4px;
+    }
+
+    .item-price {
+        font-weight: 700;
+        color: var(--red);
+        font-size: 17px;
+        margin-left: auto;
+        padding-left: 12px;
+    }
+
+    /* Tổng tiền đỏ nổi bật */
+    .total-amount {
+        margin-top: 28px;
+        padding-top: 22px;
+        border-top: 3px double var(--border);
+        text-align: center;
+    }
+
+    .total-amount .label {
+        display: block;
+        color: var(--text-light);
+        font-size: 17px;
+        margin-bottom: 8px;
+    }
+
+    .total-amount .price {
+        font-size: 44px;
+        font-weight: 800;
+        color: var(--red);
+        letter-spacing: -1.5px;
+    }
+
+    /* Responsive */
+    @@media (max-width: 480px) {
+        .checkout-card { padding: 30px 22px; }
+        .total-amount .price { font-size: 38px; }
+        .order-item { flex-direction: column; text-align: center; }
+        .order-item img { margin: 0 auto 12px; }
+        .item-price { margin-top: 8px; }
+        .payment-options label { padding: 14px; font-size: 15px; }
+    }
+</style>
+
+<div class="checkout-wrapper">
+    <div class="checkout-card">
+        <h2>Thông tin giao hàng</h2>
+        <p>Vui lòng kiểm tra kỹ trước khi đặt hàng</p>
+
+        <form method="post" action="@Url.Action("SubmitCheckout","Cart")">
+            <label>Họ và tên</label>
+            <input type="text" name="FullName" value="@(info?.FullName ?? "")" required />
+
+            <label>Email</label>
+            <input type="email" name="Email" value="@(info?.Email ?? "")" required />
+
+            <label>Số điện thoại</label>
+            <input type="tel" name="Phone" value="@(info?.Phone ?? "")" required />
+
+            <label>Địa chỉ giao hàng</label>
+            <input type="text" name="Address" value="@(info?.Address ?? "")" required placeholder="Ví dụ: 123 Đường Láng, Đống Đa" />
+
+            <label>Quận / Huyện</label>
+            <input type="text" name="District" value="@(info?.District ?? "")" required />
+
+            <h3>Phương thức thanh toán</h3>
+            <div class="payment-options">
+                <label>
+                    <input type="radio" name="paymentMethod" value="COD" checked />
+                    Thanh toán khi nhận hàng (COD)
+                </label>
+                <label>
+                    <input type="radio" name="paymentMethod" value="BANK" />
+                    Chuyển khoản ngân hàng (QR Code)
+                </label>
+            </div>
+
+            <button type="submit" class="btn-submit">
+                Hoàn tất đặt hàng
+            </button>
+        </form>
+
+        <!-- Tóm tắt đơn hàng -->
+        <!-- Tóm tắt đơn hàng -->
+        <div class="order-summary">
+            <h3>Đơn hàng (@Model.Count sản phẩm)</h3>
+
+            @foreach (var item in Model)
+            {
+                var product = item.Product;
+                var img = string.IsNullOrEmpty(product.Thumbnail)
+                    ? Url.Content("~/Content/Images/no-image.png")
+                    : Url.Content("~/Content/Images/" + product.Thumbnail);
+
+                <div class="order-item">
+                    <img src="@img" alt="@product.ProductName"
+                         onerror="this.onerror=null;this.src='@Url.Content("~/Content/Images/no-image.png")';" />
+
+                    <div class="item-info">
+                        <div class="item-name">@product.ProductName</div>
+                        <div class="item-detail">
+                            Size: <strong>@item.Size</strong> |
+                            SL: <strong>@item.Quantity</strong>
+                        </div>
+                        <div class="item-detail">
+                            Giá: @String.Format("{0:N0}", item.Price) ₫
+                        </div>
+                    </div>
+
+                    <div class="item-price">
+                        @String.Format("{0:N0}", item.Price * item.Quantity) ₫
+                    </div>
+                </div>
+            }
+
+            <div class="total-amount">
+                <div class="label">Tổng thanh toán</div>
+                <div class="price">@String.Format("{0:N0}", total) ₫</div>
+            </div>
+        </div>

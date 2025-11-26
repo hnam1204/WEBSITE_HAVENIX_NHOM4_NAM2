@@ -1,0 +1,60 @@
+﻿@model IEnumerable<HV_NIX.Models.Category>
+
+@{
+    ViewBag.Title = "Quản lý danh mục";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+<h2 class="mb-4" style="font-weight:700;"> Danh sách danh mục</h2>
+
+<a href="/AdminCategory/Create" class="btn btn-success mb-3">
+    Thêm danh mục
+</a>
+
+<table class="table table-bordered table-hover bg-white shadow-sm">
+    <thead style="background:#e9f3ff; font-weight:600;">
+        <tr>
+            <th style="width:70px;">ID</th>
+            <th>Tên danh mục</th>
+            <th style="width:150px;">Chức năng</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.CategoryID</td>
+                <td style="font-weight:600;">@c.CategoryName</td>
+
+                <td>
+                    <a href="/AdminCategory/Edit/@c.CategoryID"
+                       class="btn btn-sm btn-primary">
+                        Sửa
+                    </a>
+
+                    <a href="/AdminCategory/Delete/@c.CategoryID"
+                       onclick="return confirm('Bạn chắc chắn muốn xoá danh mục này?')"
+                       class="btn btn-sm btn-danger">
+                        Xoá
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info mt-3">
+        ⚠ Chưa có danh mục nào.
+    </div>
+}

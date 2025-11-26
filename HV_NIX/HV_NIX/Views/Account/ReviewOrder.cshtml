@@ -1,0 +1,222 @@
+﻿@model HV_NIX.Models.Orders
+@{
+    var items = ViewBag.Items as List<HV_NIX.Models.OrderDetails>;
+    var reviewed = ViewBag.Reviewed as List<HV_NIX.Models.Reviews>;
+}
+
+@Html.AntiForgeryToken()
+
+<h2 class="review-header">Đánh giá đơn hàng #@Model.OrderID</h2>
+
+@foreach (var it in items)
+{
+    bool done = reviewed.Any(r => r.ProductID == it.ProductID);
+
+    <div class="card p-3 mb-3">
+
+        <h5 class="review-title">@it.Product.ProductName</h5>
+
+        <img src="@Url.Content("~/Content/Images/" + it.Product.Thumbnail)"
+             class="review-img" />
+
+        <!-- Nếu ĐÃ ĐÁNH GIÁ -->
+        @if (done)
+        {
+            <div class="alert alert-success mt-3 mb-1">
+                 Bạn đã đánh giá sản phẩm này.
+            </div>
+            <!-- ⭐ Hiển thị sao đã đánh giá -->
+                var myRating = reviewed.First(r => r.ProductID == it.ProductID).Rating;
+            <div class="stars-disabled mt-2">
+                @for (int i = 1; i <= 5; i++)
+                {
+                    if (i <= myRating)
+                    {
+                        <i class="fa fa-star star active" style="pointer-events:none;"></i>
+                    }
+                    else
+                    {
+                        <i class="fa fa-star star" style="pointer-events:none;opacity:0.4;"></i>
+                    }
+                }
+            </div>
+
+            <!-- Hiển thị bình luận -->
+            <p class="mt-2"><b>Bình luận:</b> @reviewed.First(r => r.ProductID == it.ProductID).Comment</p>
+        }
+        else
+        {
+            <!-- ⭐ SAO CHƯA ĐÁNH GIÁ -->
+            <div class="stars" data-pid="@it.ProductID">
+                @for (int i = 1; i <= 5; i++)
+                {
+                    <i class="fa fa-star star" data-value="@i"></i>
+                }
+            </div>
+
+            <!-- COMMENT -->
+            <textarea class="form-control mt-2 review-textarea"
+                      id="cmt-@it.ProductID" placeholder="Nhập đánh giá..."></textarea>
+
+            <button class="btn-submit mt-2"
+                    onclick="sendReview(@it.ProductID, @Model.OrderID)">
+                Gửi đánh giá
+            </button>
+        }
+    </div>
+}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+    // CHỌN SAO
+    $(".star").on("click", function () {
+        if ($(this).css("pointer-events") === "none") return; // Không cho click nếu đã đánh giá
+
+        let val = $(this).data("value");
+        let wrap = $(this).closest(".stars");
+
+        wrap.find(".star").removeClass("active");
+
+        wrap.find(".star").each(function () {
+            if ($(this).data("value") <= val)
+                $(this).addClass("active");
+        });
+
+        wrap.attr("data-rating", val);
+    });
+
+    // GỬI AJAX
+    function sendReview(pid, oid) {
+        let rating = $(`.stars[data-pid='${pid}']`).attr("data-rating");
+        let cmt = $(`#cmt-${pid}`).val();
+
+        if (!rating) {
+            alert("Vui lòng chọn số sao!");
+            return;
+        }
+
+        $.ajax({
+            url: '@Url.Action("SubmitReview", "Account")',
+            type: "POST",
+            data: {
+                __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val(),
+                ProductID: pid,
+                OrderID: oid,
+                Rating: rating,
+                Comment: cmt
+            },
+            success: function (res) {
+                if (res.success) {
+                    alert("Đánh giá thành công!");
+                    location.reload();
+                } else {
+                    alert(res.message);
+                }
+            }
+        });
+    }
+</script>
+
+<style>
+    /* ===============================
+       ⭐ STYLE CHUNG TRANG REVIEW
+       =============================== */
+    body {
+        font-family: 'Montserrat', sans-serif;
+        background: #f8f9fc;
+    }
+
+    .review-header {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: #111;
+    }
+
+    .card {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 20px;
+        margin-bottom: 22px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+        border: none;
+        transition: 0.25s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+        }
+
+    .review-title {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: #222;
+    }
+
+    .review-img {
+        width: 95px;
+        height: 95px;
+        border-radius: 12px;
+        object-fit: cover;
+        border: 1px solid #eee;
+        margin-bottom: 12px;
+    }
+
+    /* NGÔI SAO */
+    .star {
+        font-size: 26px;
+        cursor: pointer;
+        color: #d4d4d4;
+        margin-right: 2px;
+        transition: 0.2s ease;
+    }
+
+        .star.active {
+            color: #FFD700;
+            text-shadow: 0 0 4px rgba(0,0,0,0.2);
+        }
+
+        .star:hover {
+            transform: scale(1.2);
+        }
+
+    /* COMMENT BOX */
+    .review-textarea {
+        width: 100%;
+        min-height: 75px;
+        padding: 12px 14px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        outline: none;
+        font-size: 14px;
+        transition: 0.25s ease;
+        resize: none;
+    }
+
+        .review-textarea:focus {
+            border-color: #222;
+            box-shadow: 0 0 6px rgba(0,0,0,0.1);
+        }
+
+    /* NÚT GỬI */
+    .btn-submit {
+        background: #111;
+        color: #fff;
+        padding: 10px 22px;
+        font-size: 15px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.3s ease;
+    }
+
+        .btn-submit:hover {
+            background: #444;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+        }
+</style>

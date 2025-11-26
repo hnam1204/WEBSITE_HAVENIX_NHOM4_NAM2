@@ -1,0 +1,158 @@
+﻿@model HV_NIX.Models.ShippingAddress
+@{
+    ViewBag.Title = "Chỉnh sửa địa chỉ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/account.css" />
+
+<div class="edit-address-page">
+    <div class="container">
+        <h2>Chỉnh sửa địa chỉ</h2>
+
+        <form method="post" action="@Url.Action("Edit", "Shipping")">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="AddressID" value="@Model.AddressID" />
+
+            <label>Họ tên người nhận</label>
+            <input type="text" name="name" value="@Model.ReceiverName" required class="form-control" />
+
+            <label>Số điện thoại</label>
+            <input type="text" name="phone" value="@Model.Phone" required class="form-control" />
+
+            <label>Địa chỉ chi tiết</label>
+            <input type="text" name="address" value="@Model.AddressLine" required class="form-control" />
+
+            <label>Thành phố / Tỉnh</label>
+            <input type="text" name="city" value="@Model.City" required class="form-control" />
+
+            <!-- Fix lỗi checkbox = null -->
+            <input type="hidden" name="isDefault" value="false" />
+            <label class="checkbox-label">
+                <input type="checkbox" name="isDefault" value="true" @(Model.IsDefault ? "checked" : "") />
+                Đặt làm địa chỉ mặc định
+            </label>
+
+            <button type="submit" class="btn-primary">Cập nhật địa chỉ</button>
+            <a href="@Url.Action("Index", "Shipping")" class="btn-secondary">Quay lại danh sách</a>
+        </form>
+    </div>
+</div>
+<style>
+        /* ==================================================
+       CHỈNH SỬA ĐỊA CHỈ - ĐỒNG BỘ HOÀN TOÀN VỚI ACCOUNT.CSS
+       (Thêm vào cuối file ~/Content/account.css)
+    ================================================== */
+
+        /* Trang chỉnh sửa (giống modal nhưng full page) */
+        .edit-address-page .container {
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 40px 45px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+        }
+
+        .edit-address-page h2 {
+            text-align: center;
+            font-size: 28px;
+            color: #006064;
+            margin-bottom: 32px;
+            font-weight: 700;
+        }
+
+        /* Label */
+        .edit-address-page label {
+            display: block;
+            margin: 22px 0 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 15px;
+        }
+
+        /* Input */
+        .edit-address-page .form-control {
+            width: 100%;
+            padding: 15px 16px;
+            border: 1.5px solid #b2ebf2;
+            border-radius: 12px;
+            background: #f8fdfe;
+            font-size: 16px;
+            transition: all 0.3s;
+            box-sizing: border-box;
+        }
+
+            .edit-address-page .form-control:focus {
+                outline: none;
+                border-color: #00acc1;
+                background: white;
+                box-shadow: 0 0 0 4px rgba(0,172,193,0.18);
+            }
+
+        /* Checkbox mặc định */
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 24px;
+            font-weight: 500;
+            cursor: pointer;
+            user-select: none;
+            font-size: 15px;
+        }
+
+            .checkbox-label input[type="checkbox"] {
+                width: 22px;
+                height: 22px;
+                accent-color: #00acc1;
+                cursor: pointer;
+            }
+
+        /* Nút Cập nhật */
+        .edit-address-page .btn-primary {
+            width: 100%;
+            padding: 16px;
+            margin-top: 32px;
+            background: #00acc1;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+            .edit-address-page .btn-primary:hover {
+                background: #00838f;
+            }
+
+        /* Nút Quay lại */
+        .edit-address-page .btn-secondary {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            margin-top: 12px;
+            background: #eceff1;
+            color: #006064;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+            .edit-address-page .btn-secondary:hover {
+                background: #b2ebf2;
+                color: #004d40;
+            }
+
+        /* Responsive */
+        @@media (max-width: 576px) {
+            .edit-address-page .container {
+                margin: 30px 15px;
+                padding: 35px 25px;
+            }
+        }
+</style>

@@ -1,0 +1,174 @@
+﻿@model List<HV_NIX.Models.Orders>
+@{
+    ViewBag.Title = "Lịch sử đơn hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@functions {
+    public string ToVietnamese(string status)
+    {
+        switch (status)
+        {
+            case "Pending": return "Đang chờ xử lý";
+            case "Completed": return "Hoàn thành";
+            case "Cancelled": return "Đã hủy";
+            case "WaitingPayment": return "Chờ thanh toán";
+            case "Shipped": return "Đang giao hàng";
+            default: return status;
+        }
+    }
+}
+
+<h2 class="mb-4">Lịch sử đơn hàng</h2>
+
+@if (!Model.Any())
+{
+    <p class="no-order">Bạn chưa có đơn hàng nào.</p>
+    return;
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Mã đơn</th>
+            <th>Ngày</th>
+            <th>Tổng tiền</th>
+            <th>Trạng thái</th>
+            <th>Đơn hàng</th>
+            <th>Đánh giá</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var o in Model)
+        {
+            <tr>
+                <td>#@o.OrderID</td>
+                <td>@o.OrderDate.ToString("dd/MM/yyyy HH:mm")</td>
+                <td>@o.Total.ToString("N0")₫</td>
+
+                <td class="status @(o.Status)">
+                    @ToVietnamese(o.Status)
+                </td>
+
+                <td>
+                    <a class="btn btn-primary btn-sm"
+                       href="@Url.Action("OrderDetail", "Account", new { id = o.OrderID })">
+                        Xem chi tiết
+                    </a>
+                </td>
+
+                <!-- CỘT ĐÁNH GIÁ -->
+                <td>
+                    @if (o.Status == "Completed")
+                    {
+                        <a class="btn btn-warning btn-sm"
+                           href="@Url.Action("ReviewOrder", "Account", new { id = o.OrderID })">
+                            Đánh giá
+                        </a>
+                    }
+                    else
+                    {
+                        <span class="text-muted">Chưa thể đánh giá</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+    /* Tiêu đề */
+    h2 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 25px;
+    }
+
+    /* Bảng */
+    .table {
+        width: 100%;
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #e0e0e0;
+    }
+
+        .table thead tr {
+            background: #0097a7;
+            color: white;
+            text-align: center;
+        }
+
+        .table thead th {
+            padding: 14px 10px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        /* Dòng */
+        .table tbody tr {
+            background: #ffffff;
+            text-align: center;
+            transition: 0.2s ease;
+        }
+
+            .table tbody tr:nth-child(even) {
+                background: #f5fafa;
+            }
+
+            .table tbody tr:hover {
+                background: #e0f7fa;
+            }
+
+        /* Ô */
+        .table td {
+            padding: 14px 8px;
+            font-size: 15px;
+            vertical-align: middle;
+        }
+
+        /* Buttons */
+        .table .btn {
+            border-radius: 6px;
+            padding: 6px 14px;
+        }
+
+    /* Button đánh giá */
+    .btn-warning {
+        color: black;
+    }
+
+    /* MÀU TRẠNG THÁI */
+    .status {
+        font-weight: 600;
+    }
+
+        .status.Pending {
+            color: #f57c00;
+        }
+
+        .status.Completed {
+            color: #388e3c;
+        }
+
+        .status.Cancelled {
+            color: #d32f2f;
+        }
+
+        .status.WaitingPayment {
+            color: #1976d2;
+        }
+
+        .status.Shipped {
+            color: #009688;
+        }
+
+    /* Chưa có đơn */
+    .no-order {
+        padding: 50px 0;
+        text-align: center;
+        font-size: 18px;
+        color: #666;
+    }
+</style>

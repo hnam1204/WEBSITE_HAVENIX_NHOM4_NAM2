@@ -1,0 +1,220 @@
+﻿@model HV_NIX.Models.Orders
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Đặt hàng thành công";
+}
+
+<style>
+    :root {
+        --bg: #E3F2FD;
+        --card: #FFFFFF;
+        --primary: #319795;
+        --red: #E53E3E;
+        --text: #1A365D;
+        --text-light: #718096;
+        --radius: 24px;
+        --shadow: 0 15px 35px rgba(0,0,0,0.08);
+    }
+
+    /* Section chính giữa màn hình – Layout vẫn hiện bình thường */
+    .thankyou-section {
+        background: var(--bg);
+        padding: 80px 20px;
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .thankyou-card {
+        background: var(--card);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 55px 50px;
+        text-align: center;
+        max-width: 540px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .icon-check {
+        width: 94px;
+        height: 94px;
+        background: var(--primary);
+        border-radius: 50%;
+        margin: 0 auto 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 12px 35px rgba(49,151,149,0.4);
+    }
+
+    .icon-check svg {
+        width: 54px;
+        height: 54px;
+        fill: white;
+    }
+
+    .thankyou-card h2 {
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--text);
+        margin: 0 0 14px;
+    }
+
+    .thankyou-card > p {
+        font-size: 17px;
+        color: var(--text-light);
+        margin: 12px 0 40px;
+        line-height: 1.6;
+    }
+
+    .info-box {
+        background: #F8FAFC;
+        border-radius: 20px;
+        padding: 32px;
+        margin: 35px 0;
+    }
+
+    .info-item {
+        margin: 20px 0;
+    }
+
+    .label {
+        display: block;
+        color: var(--text-light);
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+
+    .order-id {
+        font-size: 38px;
+        font-weight: 800;
+        color: var(--primary);
+        letter-spacing: 1px;
+    }
+
+    .total-price {
+        font-size: 48px;
+        font-weight: 800;
+        color: var(--red);
+        letter-spacing: -2px;
+    }
+
+    .payment-note {
+        margin-top: 22px;
+        padding: 16px;
+        background: #D1FAE5;
+        border-radius: 16px;
+        color: #065F46;
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    /* Nút bấm */
+    .btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 35px;
+    }
+
+    .btn-home,
+    .btn-details {
+        display: block;
+        padding: 18px;
+        border-radius: 16px;
+        font-size: 18px;
+        font-weight: 700;
+        text-decoration: none;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(49,151,149,0.35);
+    }
+
+    .btn-home {
+        background: var(--primary);
+        color: white;
+    }
+
+    .btn-home:hover {
+        background: #2C7A7B;
+        transform: translateY(-5px);
+        box-shadow: 0 18px 45px rgba(49,151,149,0.5);
+    }
+
+    .btn-details {
+        background: #FFFFFF;
+        color: var(--primary);
+        border: 3px solid var(--primary);
+    }
+
+    .btn-details:hover {
+        background: #E6FFFA;
+        transform: translateY(-5px);
+        box-shadow: 0 18px 45px rgba(49,151,149,0.3);
+    }
+
+    .support {
+        margin-top: 30px;
+        color: var(--text-light);
+        font-size: 14px;
+    }
+
+    .support strong { color: var(--primary); }
+
+    @@media (max-width: 480px) {
+        .thankyou-card { padding: 45px 30px; }
+        .total-price { font-size: 42px; }
+        .order-id { font-size: 32px; }
+        .btn-home, .btn-details { font-size: 17px; padding: 16px; }
+    }
+</style>
+
+<!-- CARD CẢM ƠN CHÍNH GIỮA – HEADER + FOOTER VẪN HIỆN BÌNH THƯỜNG -->
+<div class="thankyou-section">
+    <div class="thankyou-card">
+        <div class="icon-check">
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" /></svg>
+        </div>
+
+        <h2>Cảm ơn bạn đã đặt hàng!</h2>
+        <p>Đơn hàng đã được tiếp nhận thành công. Chúng tôi sẽ xử lý ngay!</p>
+
+        <div class="info-box">
+            <div class="info-item">
+                <div class="label">Mã đơn hàng</div>
+                <div class="order-id">#@Model.OrderID</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Tổng thanh toán</div>
+                <div class="total-price">@String.Format("{0:N0}", Model.Total) ₫</div>
+            </div>
+
+            @if (Model.PaymentMethod == "BANK")
+            {
+                <div class="payment-note">
+                    Bạn đã chọn chuyển khoản ngân hàng<br>
+                    Vui lòng thanh toán trong vòng <strong>30 phút</strong> để giữ đơn hàng.
+                </div>
+            }
+            else
+            {
+                <div class="payment-note">
+                    Thanh toán khi nhận hàng (COD)
+                </div>
+            }
+        </div>
+
+        <div class="btn-group">
+            <a href="/" class="btn-home">Quay lại trang chủ</a>
+            <a href="@Url.Action("OrderDetail", "Account", new { id = Model.OrderID })" class="btn-details">
+                Xem chi tiết đơn hàng
+            </a>
+        </div>
+
+        <div class="support">
+            Cần hỗ trợ? Liên hệ <strong>havenix_store</strong>
+        </div>
+    </div>
+</div>

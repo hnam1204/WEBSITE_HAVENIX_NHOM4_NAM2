@@ -1,0 +1,100 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Gửi thông báo";
+}
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<style>
+    .box {
+        background: #fff;
+        padding: 25px;
+        border-radius: 14px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .btn-havenix {
+        background: linear-gradient(135deg, #27A4F2, #6586E5);
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: none;
+        font-size: 16px;
+        font-weight: 600;
+        transition: 0.25s ease;
+    }
+
+        .btn-havenix:hover {
+            opacity: .9;
+            transform: translateY(-2px);
+        }
+</style>
+
+<h2 class="mb-4">📩 Gửi thông báo</h2>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+<div class="box">
+    <form method="post">
+
+        <!-- GỬI ĐẾN -->
+        <div class="mb-3">
+            <label class="form-label fw-bold">Gửi đến</label>
+            <select class="form-select" name="SendTo" id="SendTo" onchange="toggleUserSelect()">
+                <option value="Single">1 người dùng</option>
+                <option value="All">Tất cả người dùng</option>
+            </select>
+        </div>
+
+        <!-- CHỌN USER -->
+        <div class="mb-3" id="UserSelectBox">
+            <label class="form-label fw-bold">Chọn người dùng</label>
+            <select class="form-select" name="UserID">
+                @foreach (var u in ViewBag.Users as List<HV_NIX.Models.Users>)
+                {
+                    <option value="@u.UserID">@u.Email</option>
+                }
+            </select>
+        </div>
+
+        <!-- Tiêu đề -->
+        <div class="mb-3">
+            <label class="form-label fw-bold">Tiêu đề</label>
+            <input type="text" name="Title" class="form-control" required />
+        </div>
+
+        <!-- Nội dung -->
+        <div class="mb-3">
+            <label class="form-label fw-bold">Nội dung</label>
+            <textarea name="Message" class="form-control" rows="4" required></textarea>
+        </div>
+
+        <button class="btn-havenix">
+            <i class="fa fa-paper-plane"></i> Gửi thông báo
+        </button>
+    </form>
+</div>
+
+<script>
+    function toggleUserSelect() {
+        var mode = document.getElementById("SendTo").value;
+        var box = document.getElementById("UserSelectBox");
+
+        if (mode === "All") {
+            box.style.display = "none";
+        } else {
+            box.style.display = "block";
+        }
+    }
+</script>

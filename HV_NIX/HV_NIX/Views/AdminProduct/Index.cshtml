@@ -1,0 +1,71 @@
+﻿@model IEnumerable<HV_NIX.Models.Products>
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+<h2 class="mb-4" style="font-weight:600;"> Danh sách sản phẩm</h2>
+
+<a href="/AdminProduct/Create" class="btn btn-success mb-3">+ Thêm sản phẩm</a>
+
+<table class="table table-bordered table-hover bg-white shadow-sm">
+    <thead style="background: #e7f3ff;">
+        <tr>
+            <th style="width:70px;">ID</th>
+            <th style="width:90px;">Ảnh</th>
+            <th>Tên sản phẩm</th>
+            <th style="width:120px;">Giá</th>
+            <th style="width:160px;">Danh mục</th>
+            <th style="width:160px;">Chức năng</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model == null || !Model.Any())
+        {
+            <tr>
+                <td colspan="6" class="text-center text-muted py-4">
+                    Không có sản phẩm nào.
+                </td>
+            </tr>
+        }
+        else
+        {
+            foreach (var p in Model)
+            {
+                <tr>
+                    <td>@p.ProductID</td>
+
+                    <td>
+                        <img src="@Url.Content("~/Content/Images/" + p.Thumbnail)"
+                             style="width:65px;height:65px;border-radius:8px;object-fit:cover;" />
+                    </td>
+
+                    <td>@p.ProductName</td>
+                    <td>@p.Price.ToString("N0") đ</td>
+
+                    <td>
+                        @(p.Category != null ? p.Category.CategoryName : "<không có>")
+                    </td>
+
+                    <td>
+                        <a href="@Url.Action("Edit", "AdminProduct", new { id = p.ProductID })"
+                           class="btn btn-sm btn-primary me-1">Sửa</a>
+
+                        <a href="@Url.Action("Delete", "AdminProduct", new { id = p.ProductID })"
+                           onclick="return confirm('Bạn chắc chắn muốn xoá sản phẩm này?')"
+                           class="btn btn-sm btn-danger">Xoá</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

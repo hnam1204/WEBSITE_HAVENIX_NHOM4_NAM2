@@ -1,0 +1,36 @@
+﻿@model List<HV_NIX.Models.CustomerStatsVM>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="mb-4">Khách hàng</h2>
+
+<div class="mb-3">
+    <a href="?sort=desc" class="btn btn-primary">Giá trị cao → thấp</a>
+    <a href="?sort=asc" class="btn btn-secondary">Giá trị thấp → cao</a>
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead style="background:#e8f3ff">
+        <tr>
+            <th>ID</th>
+            <th>Tên khách hàng</th>
+            <th>Email</th>
+            <th>Tổng đơn hàng</th>
+            <th>Tổng tiền đã mua</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.UserID</td>
+                <td>@c.FullName</td>
+                <td>@c.Email</td>
+                <td>@c.TotalOrders</td>
+                <td>@c.TotalSpent.ToString("N0") đ</td>
+            </tr>
+        }
+    </tbody>
+</table>

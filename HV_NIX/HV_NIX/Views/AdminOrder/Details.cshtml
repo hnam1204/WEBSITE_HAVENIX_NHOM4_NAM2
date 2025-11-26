@@ -1,0 +1,157 @@
+﻿@model HV_NIX.Models.Orders
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Chi tiết đơn hàng #" + Model.OrderID;
+}
+
+@functions {
+    public string StatusText(string s)
+    {
+        switch (s)
+        {
+            case "Pending": return "Đang xử lý";
+            case "WaitingPayment": return "Chờ thanh toán";
+            case "Paid": return "Đã thanh toán";
+            case "Shipping": return "Đang giao hàng";
+            case "Completed": return "Hoàn thành";
+            case "Cancel": return "Đã hủy";
+            default: return "Không rõ";
+        }
+    }
+
+    public string StatusBadge(string s)
+    {
+        switch (s)
+        {
+            case "Paid": return "success";
+            case "WaitingPayment": return "warning";
+            case "Pending": return "secondary";
+            case "Shipping": return "info";
+            case "Completed": return "primary";
+            case "Cancel": return "danger";
+            default: return "dark";
+        }
+    }
+}
+
+<h2 class="mb-4">Chi tiết đơn hàng #@Model.OrderID</h2>
+
+<div class="row">
+
+    <!-- ========================== THÔNG TIN KHÁCH HÀNG ========================== -->
+    <div class="col-md-4">
+        <div class="card p-3 shadow-sm">
+            <h5 class="fw-bold mb-3"><i class="fa-solid fa-user"></i> Thông tin khách hàng</h5>
+
+            <p><strong>Email:</strong> @(Model.User?.Email ?? "Không có")</p>
+            <p><strong>Họ tên:</strong> @(Model.User?.UserInfo?.FullName ?? "Chưa cập nhật")</p>
+            <p><strong>SĐT:</strong> @(Model.User?.UserInfo?.Phone ?? "Chưa cập nhật")</p>
+
+            <p>
+                <strong>Địa chỉ:</strong>
+                @(Model.User?.UserInfo?.Address ?? "Không có"),
+                @(Model.User?.UserInfo?.District ?? "")
+            </p>
+        </div>
+    </div>
+
+    <!-- ========================== THÔNG TIN ĐƠN HÀNG ========================== -->
+    <div class="col-md-4">
+        <div class="card p-3 shadow-sm">
+            <h5 class="fw-bold mb-3"><i class="fa-solid fa-receipt"></i> Thông tin đơn hàng</h5>
+
+            <p><strong>Mã đơn:</strong> #@Model.OrderID</p>
+            <p><strong>Ngày đặt:</strong> @Model.OrderDate.ToString("dd/MM/yyyy HH:mm")</p>
+
+            <p>
+                <strong>Trạng thái:</strong>
+                <span class="badge bg-@StatusBadge(Model.Status) px-3 py-2">
+                    @StatusText(Model.Status)
+                </span>
+            </p>
+
+            @if (Model.PaidDate != null)
+            {
+                <p>
+                    <strong>Ngày thanh toán:</strong>
+                    @(Model.PaidDate == null
+        ? "Chưa thanh toán"
+        : Model.PaidDate.Value.ToString("dd/MM/yyyy HH:mm"))
+                </p>
+
+            }
+
+            <p>
+                <strong>Tổng tiền:</strong>
+                <span class="text-danger fw-bold">@Model.Total.ToString("N0") ₫</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- ========================== CẬP NHẬT TRẠNG THÁI ========================== -->
+    <div class="col-md-4">
+        <div class="card p-3 shadow-sm">
+            <h5 class="fw-bold mb-3"><i class="fa-solid fa-pen-to-square"></i> Cập nhật trạng thái</h5>
+
+            <form method="post" action="/AdminOrder/UpdateStatus">
+                <input type="hidden" name="id" value="@Model.OrderID" />
+
+                <select name="status" class="form-select mb-3">
+                    <option value="Pending" @(Model.Status == "Pending" ? "selected" : "")>Đang xử lý</option>
+                    <option value="WaitingPayment" @(Model.Status == "WaitingPayment" ? "selected" : "")>Chờ thanh toán</option>
+                    <option value="Paid" @(Model.Status == "Paid" ? "selected" : "")>Đã thanh toán</option>
+                    <option value="Shipping" @(Model.Status == "Shipping" ? "selected" : "")>Đang giao hàng</option>
+                    <option value="Completed" @(Model.Status == "Completed" ? "selected" : "")>Hoàn thành</option>
+                    <option value="Cancel" @(Model.Status == "Cancel" ? "selected" : "")>Hủy đơn</option>
+                </select>
+
+                <button class="btn btn-primary w-100">Cập nhật</button>
+            </form>
+
+            <hr />
+
+            <a href="/AdminOrder/Delete/@Model.OrderID"
+               onclick="return confirm('Bạn có chắc muốn xóa đơn hàng này?')"
+               class="btn btn-danger w-100">
+                <i class="fa-solid fa-trash"></i> Xóa đơn hàng
+            </a>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<!-- ========================== DANH SÁCH SẢN PHẨM ========================== -->
+<div class="card p-3 shadow-sm mt-3">
+    <h5 class="fw-bold mb-3"><i class="fa-solid fa-box"></i> Sản phẩm trong đơn</h5>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Ảnh</th>
+                <th>Sản phẩm</th>
+                <th>Size</th>
+                <th>Số lượng</th>
+                <th>Giá</th>
+                <th>Tổng</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.Details)
+            {
+                <tr>
+                    <td width="100">
+                        <img src="~/Content/Images/@item.Product.Thumbnail"
+                             style="width:80px; border-radius: 6px;" />
+                    </td>
+                    <td>@item.Product.ProductName</td>
+                    <td>@item.Size</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Price.ToString("N0") ₫</td>
+                    <td class="text-danger fw-bold">@Model.Total.ToString("N0") ₫</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

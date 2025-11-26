@@ -1,0 +1,97 @@
+﻿@model HV_NIX.Models.Users
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Tạo tài khoản Admin";
+}
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<style>
+    .create-container {
+        max-width: 550px;
+        margin: 20px auto;
+        background: #fff;
+        padding: 25px;
+        border-radius: 14px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: 600;
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        margin-bottom: 16px;
+    }
+
+    .btn-save {
+        width: 100%;
+        padding: 10px;
+        background: #007bff;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        color: #fff;
+        font-weight: 600;
+        transition: .2s;
+    }
+
+        .btn-save:hover {
+            background: #0066d3;
+        }
+
+    .back-link {
+        display: inline-block;
+        margin-bottom: 15px;
+        color: #007bff;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+</style>
+
+<div class="create-container">
+
+    <a href="/Admin/Accounts" class="back-link">
+        <i class="fa fa-arrow-left"></i> Quay lại
+    </a>
+
+    <h2><i class="fa fa-user-plus"></i> Tạo tài khoản Admin</h2>
+
+    @using (Html.BeginForm("CreateAccount", "Admin", FormMethod.Post))
+    {
+        <!-- EMAIL -->
+        <label>Email</label>
+        <input type="email"
+               name="Email"
+               class="form-control"
+               required
+               placeholder="Nhập email...">
+
+        <!-- PASSWORD -->
+        <label>Mật khẩu</label>
+        <input type="text"
+               name="PasswordHash"
+               class="form-control"
+               required
+               placeholder="Nhập mật khẩu...">
+
+        <button type="submit" class="btn-save">
+            <i class="fa fa-save"></i> Tạo tài khoản
+        </button>
+    }
+</div>

@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Thêm địa chỉ giao hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/account.css" />
+
+<div class="container" style="max-width:600px; margin:auto; padding:30px 0;">
+
+    <h2 style="margin-bottom:20px;">➕ Thêm địa chỉ mới</h2>
+
+    <form method="post" action="@Url.Action("Add", "Shipping")">
+
+        <label>Họ tên người nhận</label>
+        <input type="text" name="name" required class="form-control" />
+
+        <label>Số điện thoại</label>
+        <input type="text" name="phone" required class="form-control" />
+
+        <label>Địa chỉ</label>
+        <input type="text" name="address" required class="form-control" />
+
+        <label>Thành phố</label>
+        <input type="text" name="city" required class="form-control" />
+
+        <!-- FIX 100% LỖI isDefault -->
+        <input type="hidden" name="isDefault" value="false" />
+
+        <label style="margin-top:15px; display:flex; align-items:center; gap:6px;">
+            <input type="checkbox" name="isDefault" value="true" />
+            Đặt làm địa chỉ mặc định
+        </label>
+
+        <button class="btn-primary" style="width:100%; margin-top:25px;">
+            Lưu địa chỉ
+        </button>
+
+        <a href="@Url.Action("Index", "Shipping")" class="btn-secondary" style="width:100%; margin-top:10px; text-align:center; display:block;">
+            Quay lại danh sách
+        </a>
+    </form>
+</div>

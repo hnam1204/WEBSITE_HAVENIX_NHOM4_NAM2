@@ -1,0 +1,386 @@
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\HV_NIX.dll.config
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\HV_NIX.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\HV_NIX.pdb
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\csc.exe
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\csc.exe.config
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\csc.rsp
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\csi.exe
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\csi.exe.config
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\csi.rsp
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\Microsoft.Managed.Core.targets
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.AppContext.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.Collections.Immutable.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.Console.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.Globalization.Calendars.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.IO.Compression.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.IO.FileSystem.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.Net.Http.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.Net.Sockets.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.Reflection.Metadata.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.ValueTuple.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.Xml.XmlDocument.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.Xml.XPath.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\vbc.exe
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\vbc.exe.config
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\vbc.rsp
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\VBCSCompiler.exe
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\roslyn\VBCSCompiler.exe.config
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\Antlr3.Runtime.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\EntityFramework.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\EntityFramework.SqlServer.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\Microsoft.Web.Infrastructure.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\Newtonsoft.Json.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\System.Web.Helpers.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\System.Web.Mvc.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\System.Web.Optimization.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\System.Web.Razor.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\System.Web.WebPages.Deployment.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\System.Web.WebPages.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\System.Web.WebPages.Razor.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\WebGrease.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\EntityFramework.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\EntityFramework.SqlServer.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\System.Web.Helpers.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\System.Web.Mvc.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\System.Web.Optimization.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\System.Web.Razor.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\System.Web.WebPages.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\System.Web.WebPages.Deployment.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\System.Web.WebPages.Razor.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\Newtonsoft.Json.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\Antlr3.Runtime.pdb
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\obj\Debug\HV_NIX.csproj.AssemblyReference.cache
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\obj\Debug\HV_NIX.Migrations.Init.resources
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\obj\Debug\HV_NIX.Migrations.AddDescriptionToProducts.resources
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\obj\Debug\HV_NIX.Migrations.Init1.resources
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\obj\Debug\HV_NIX.Migrations.SeedCategories.resources
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\obj\Debug\HV_NIX.Migrations.AddReviewsFixed.resources
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\obj\Debug\HV_NIX.Migrations.Create_PaymentMethod.resources
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\obj\Debug\HV_NIX.Migrations.Add_ShippingAddress.resources
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\obj\Debug\HV_NIX.Migrations.Add_UserModules.resources
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\obj\Debug\HV_NIX.Migrations.SyncModels.resources
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\obj\Debug\HV_NIX.Migrations.Add_ActivityLog_Fixed.resources
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\obj\Debug\HV_NIX.Migrations.FixModels.resources
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\obj\Debug\HV_NIX.Migrations.Fix_NotificationID.resources
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\obj\Debug\HV_NIX.Migrations.Fix_NotificationID_Clean.resources
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\obj\Debug\HV_NIX.csproj.GenerateResource.cache
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\obj\Debug\HV_NIX.csproj.CoreCompileInputs.cache
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\obj\Debug\HV_NIX.csproj.Up2Date
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\obj\Debug\HV_NIX.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\BÀI NỘP\HV_NIX\HV_NIX\obj\Debug\HV_NIX.pdb
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\HV_NIX.dll.config
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\HV_NIX.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\HV_NIX.pdb
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\csc.exe
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\csc.exe.config
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\csc.rsp
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\csi.exe
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\csi.exe.config
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\csi.rsp
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.Managed.Core.targets
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.AppContext.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Collections.Immutable.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Console.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Globalization.Calendars.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.IO.Compression.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.IO.FileSystem.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Net.Http.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Net.Sockets.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Reflection.Metadata.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.ValueTuple.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Xml.XmlDocument.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Xml.XPath.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\vbc.exe
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\vbc.exe.config
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\vbc.rsp
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\VBCSCompiler.exe
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\VBCSCompiler.exe.config
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\Antlr3.Runtime.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\BCrypt.Net-Next.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\EntityFramework.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\EntityFramework.SqlServer.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\Microsoft.Web.Infrastructure.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\Newtonsoft.Json.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Buffers.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Memory.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Numerics.Vectors.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Helpers.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Mvc.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Optimization.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Razor.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.WebPages.Deployment.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.WebPages.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.WebPages.Razor.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\WebGrease.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\BCrypt.Net-Next.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\EntityFramework.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\EntityFramework.SqlServer.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Buffers.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Memory.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Numerics.Vectors.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Helpers.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Mvc.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Optimization.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Razor.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.WebPages.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.WebPages.Deployment.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.WebPages.Razor.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\Newtonsoft.Json.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\Antlr3.Runtime.pdb
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.csproj.AssemblyReference.cache
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.Migrations.Initial.resources
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.Migrations.UpdateAllModels.resources
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.Migrations.ConfigUpdate.resources
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.csproj.GenerateResource.cache
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.csproj.CoreCompileInputs.cache
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.csproj.Up2Date
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.dll
+D:\NĂM 2\LẬP TRÌNH WEB\DỰ ÁN CUỐI KỲ WEB\CODE_FIRST\CODE_FIRST-main\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.pdb
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\HV_NIX.dll.config
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\HV_NIX.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\HV_NIX.pdb
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\csc.exe
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\csc.exe.config
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\csc.rsp
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\csi.exe
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\csi.exe.config
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\csi.rsp
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.Managed.Core.targets
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.AppContext.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Collections.Immutable.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Console.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Globalization.Calendars.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.IO.Compression.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.IO.FileSystem.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Net.Http.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Net.Sockets.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Reflection.Metadata.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.ValueTuple.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Xml.XmlDocument.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Xml.XPath.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\vbc.exe
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\vbc.exe.config
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\vbc.rsp
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\VBCSCompiler.exe
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\VBCSCompiler.exe.config
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\Antlr3.Runtime.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\BCrypt.Net-Next.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\EntityFramework.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\EntityFramework.SqlServer.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\Microsoft.Web.Infrastructure.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\Newtonsoft.Json.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Buffers.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Memory.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Numerics.Vectors.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Helpers.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Mvc.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Optimization.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Razor.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.WebPages.Deployment.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.WebPages.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.WebPages.Razor.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\WebGrease.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\BCrypt.Net-Next.xml
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\EntityFramework.xml
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\EntityFramework.SqlServer.xml
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Buffers.xml
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Memory.xml
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Numerics.Vectors.xml
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Helpers.xml
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Mvc.xml
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Optimization.xml
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Razor.xml
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.WebPages.xml
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.WebPages.Deployment.xml
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.WebPages.Razor.xml
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\Newtonsoft.Json.xml
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\Antlr3.Runtime.pdb
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.csproj.AssemblyReference.cache
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.Migrations.Initial.resources
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.Migrations.UpdateAllModels.resources
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.Migrations.ConfigUpdate.resources
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.csproj.GenerateResource.cache
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.csproj.CoreCompileInputs.cache
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.csproj.Up2Date
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.dll
+C:\web\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.pdb
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\HV_NIX.dll.config
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\HV_NIX.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\HV_NIX.pdb
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\csc.exe
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\csc.exe.config
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\csc.rsp
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\csi.exe
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\csi.exe.config
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\csi.rsp
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.Managed.Core.targets
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.AppContext.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Collections.Immutable.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Console.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Globalization.Calendars.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.IO.Compression.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.IO.FileSystem.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Net.Http.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Net.Sockets.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Reflection.Metadata.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.ValueTuple.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Xml.XmlDocument.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Xml.XPath.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\vbc.exe
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\vbc.exe.config
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\vbc.rsp
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\VBCSCompiler.exe
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\roslyn\VBCSCompiler.exe.config
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\Antlr3.Runtime.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\BCrypt.Net-Next.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\EntityFramework.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\EntityFramework.SqlServer.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\Microsoft.Web.Infrastructure.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\Newtonsoft.Json.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Buffers.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Memory.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Numerics.Vectors.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Helpers.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Mvc.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Optimization.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Razor.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.WebPages.Deployment.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.WebPages.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.WebPages.Razor.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\WebGrease.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\BCrypt.Net-Next.xml
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\EntityFramework.xml
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\EntityFramework.SqlServer.xml
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Buffers.xml
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Memory.xml
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Numerics.Vectors.xml
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Helpers.xml
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Mvc.xml
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Optimization.xml
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.Razor.xml
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.WebPages.xml
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.WebPages.Deployment.xml
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\System.Web.WebPages.Razor.xml
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\Newtonsoft.Json.xml
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\Antlr3.Runtime.pdb
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.csproj.AssemblyReference.cache
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.Migrations.InitialCreate.resources
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.csproj.GenerateResource.cache
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.csproj.CoreCompileInputs.cache
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.csproj.Up2Date
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.dll
+D:\NĂM 2\LẬP TRÌNH WEB\THỨ 5 vấn đáp\CODE_FIRST-main\HV_NIX\HV_NIX\obj\Debug\HV_NIX.pdb

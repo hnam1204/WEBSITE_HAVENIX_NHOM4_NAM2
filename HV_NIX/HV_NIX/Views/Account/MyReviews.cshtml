@@ -1,0 +1,161 @@
+﻿@model List<HV_NIX.Models.Reviews>
+@{
+    ViewBag.Title = "Đánh giá của tôi";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<style>
+    body {
+        background: #f8f9fc;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .review-header {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: #111;
+    }
+
+    .review-item {
+        background: #fff;
+        padding: 20px;
+        border-radius: 16px;
+        margin-bottom: 20px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+        transition: 0.25s ease;
+        display: flex;
+        gap: 20px;
+    }
+
+        .review-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 26px rgba(0,0,0,0.1);
+        }
+
+    .review-img {
+        width: 110px;
+        height: 110px;
+        border-radius: 14px;
+        object-fit: cover;
+        border: 1px solid #ddd;
+    }
+
+    .review-product-name {
+        font-size: 19px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: #222;
+    }
+
+    .review-stars {
+        margin: 4px 0 10px 0;
+    }
+
+    .star {
+        font-size: 22px;
+        color: #d4d4d4;
+        margin-right: 2px;
+    }
+
+        .star.active {
+            color: #FFD700;
+            text-shadow: 0 0 3px rgba(0,0,0,0.2);
+        }
+
+    .review-comment {
+        font-size: 15px;
+        color: #444;
+        margin: 6px 0 10px 0;
+        line-height: 1.5;
+    }
+
+    /* ⭐ PHẢN HỒI ADMIN */
+    .admin-reply-box {
+        margin-top: 14px;
+        background: #eef6ff;
+        padding: 14px 18px;
+        border-left: 4px solid #1e88e5;
+        border-radius: 10px;
+    }
+
+    .admin-reply-title {
+        font-weight: 700;
+        margin-bottom: 4px;
+        color: #1e88e5;
+    }
+
+    .review-date {
+        font-size: 13px;
+        color: #888;
+        margin-top: 4px;
+    }
+
+    @@media(max-width: 768px) {
+        .review-item {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .review-img {
+            width: 140px;
+            height: 140px;
+        }
+    }
+</style>
+
+
+<h2 class="review-header">Đánh giá của tôi</h2>
+
+
+@if (!Model.Any())
+{
+    <p style="font-size:17px;color:#444;">Bạn chưa có đánh giá nào.</p>
+}
+else
+{
+    foreach (var r in Model)
+    {
+        <div class="review-item">
+
+            <!-- ẢNH -->
+            <img class="review-img"
+                 src="@Url.Content("~/Content/Images/" + r.Product?.Thumbnail)" />
+
+            <div style="flex:1;">
+
+                <!-- TÊN -->
+                <div class="review-product-name">@r.Product.ProductName</div>
+
+                <!-- SAO -->
+                <div class="review-stars">
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        <i class="fa fa-star star @(i <= r.Rating ? "active" : "")"></i>
+                    }
+                </div>
+
+                <!-- COMMENT -->
+                <div class="review-comment">
+                    @(!string.IsNullOrEmpty(r.Comment) ? r.Comment : "(Không có nhận xét)")
+                </div>
+
+                <!-- NGÀY -->
+                <div class="review-date">
+                    Đánh giá vào: @r.ReviewDate.ToString("dd/MM/yyyy HH:mm")
+                </div>
+
+                <!-- ⭐ PHẢN HỒI ADMIN -->
+                @if (!string.IsNullOrEmpty(r.AdminReply))
+                {
+                    <div class="admin-reply-box">
+                        <div class="admin-reply-title">Phản hồi từ Admin:</div>
+                        <div>@r.AdminReply</div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    }
+}
