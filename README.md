@@ -72,7 +72,7 @@ MVC 5 kết hợp SQL Server...
 
 ### Trang chủ
 
-![Trang chủ](https://via.placeholder.com/1200x500?text=Home+Page)
+![Trang chủ](https://i.ibb.co/tMKyrP18/z7267021645274-b678c3da7e3c.jpg)
 
 ### Danh sách sản phẩm
 
@@ -171,11 +171,11 @@ CartItems, Payments, Reviews, AdminActivityLog.
 ### Bước 2: Import database
 
 -   Tạo database HAVENIX\
--   Chạy file HAVENIX.sql
+-   import file vào sql sever havenix.bacpac
 
 ### Bước 3: Cập nhật Connection String
 
-    <add name="AppDbContext" connectionString="Data Source=.;Initial Catalog=HAVENIX;Integrated Security=True;" providerName="System.Data.SqlClient" />
+    <add name="AppDbContext" connectionString="Data Source="severname";Initial Catalog=HAVENIX;Integrated Security=True;" providerName="System.Data.SqlClient" /> //// cập nhật "severname "
 
 ### Bước 4: Chạy dự án bằng IIS Express
 
