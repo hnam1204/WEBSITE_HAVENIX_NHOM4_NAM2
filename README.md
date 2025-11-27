@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Logo-huflit.png" 
+  <img src="https://huflit.edu.vn/wp-content/uploads/2024/03/HUFLIT_Logo_English_Official.png" 
        alt="HUFLIT Logo" width="180">
 </p>
 # HAVENIX STORE --- WEBSITE BÁN HÀNG THỜI TRANG
