@@ -1,8 +1,3 @@
-<p align="center">
-  <img src="https://huflit.edu.vn/wp-content/uploads/2024/03/HUFLIT_Logo_English_Official.png" 
-       alt="HUFLIT Logo" width="200">
-</p>
-
 # HAVENIX STORE — WEBSITE BÁN HÀNG THỜI TRANG
 ### Đồ án môn Lập Trình Trên Web  
 ### Nhóm 4 — Trường Đại học Ngoại ngữ – Tin học TP. Hồ Chí Minh (HUFLIT)
@@ -48,25 +43,22 @@ HAVENIX STORE là website bán hàng thời trang được xây dựng bằng AS
 
 # 3. Giao diện minh họa
 
+
 ### Trang chủ
-<p align="center">
-  <img src="https://i.ibb.co/tMKyrP18/z7267021645274-b678c3da7e3c.jpg" 
-       alt="Trang chủ HAVENIX" style="max-width:100%; border-radius: 10px;">
-</p>
+
 
 ### Danh sách sản phẩm
-![Product List](https://via.placeholder.com/1200x500?text=Product+List)
+
 
 ### Chi tiết sản phẩm
-![Product Detail](https://via.placeholder.com/1200x500?text=Product+Detail)
+
 
 ### Giỏ hàng
-![Cart](https://via.placeholder.com/1200x500?text=Cart+Page)
+
 
 ### Dashboard Admin
-![Dashboard](https://via.placeholder.com/1200x500?text=Admin+Dashboard)
 
----
+
 
 # 4. Mục tiêu
 - Xây dựng website bán hàng hoàn chỉnh.  
@@ -90,7 +82,7 @@ HAVENIX STORE là website bán hàng thời trang được xây dựng bằng AS
 
 ## 5.2. Chức năng quản trị (Admin)
 
-- CRUD sản phẩm  
+- Quản lý sản phẩm  
 - Quản lý danh mục  
 - Quản lý người dùng  
 - Quản lý đơn hàng  
@@ -196,4 +188,8 @@ Nhấn **IIS Express** trên Visual Studio.
 ---
 
 # 14. Lời cảm ơn
-Nhóm xin gửi lời tri ân sâu sắc đến giảng viên **ThS. Đinh Minh Hòa** đã tận tình hướng dẫn, hỗ trợ và truyền cảm hứng trong suốt quá trình thực hiện đồ án.
+Trước hết, nhóm chúng em xin gửi lời tri ân sâu sắc nhất đến giảng viên phụ trách môn Lập trình Web – ** ThS. Đinh Minh Hòa ** Trong suốt quá trình học tập và thực hiện đồ án, thầy không chỉ truyền đạt những kiến thức chuyên môn quý giá mà còn luôn tận tình hướng dẫn, giải đáp thắc mắc và đưa ra những lời khuyên vô cùng hữu ích để chúng em có thể hoàn thiện sản phẩm của mình.
+Nhờ sự chỉ bảo tận tâm và phương pháp giảng dạy đầy nhiệt huyết của thầy, nhóm chúng em hiểu rõ hơn về quy trình xây dựng một website hoàn chỉnh: từ thiết kế giao diện người dùng, xử lý logic nghiệp vụ, đến cấu trúc cơ sở dữ liệu và vận hành hệ thống. Mỗi buổi học và mỗi góp ý của thầy đều mang lại cho chúng em thêm động lực, sự tự tin và cái nhìn thực tế hơn về lập trình Web – một lĩnh vực đang phát triển mạnh mẽ và đầy cơ hội.
+Trong suốt thời gian thực hiện đồ án, thầy luôn tạo điều kiện tốt nhất để nhóm có thể phát huy khả năng, tiếp cận kiến thức mới và rèn luyện tư duy lập trình một cách chuyên nghiệp. Những chia sẻ và định hướng của thầy không chỉ giúp nhóm giải quyết các khó khăn kỹ thuật mà còn truyền cảm hứng để chúng em hoàn thiện sản phẩm với tinh thần trách nhiệm cao nhất.
+Nhóm 4 xin chân thành cảm ơn thầy vì sự tận tụy, sự kiên nhẫn và những đóng góp thầm lặng mà thầy dành cho chúng em. Thành quả của đồ án hôm nay là kết quả của cả quá trình học tập nghiêm túc dưới sự hướng dẫn tâm huyết của thầy. Chúng em sẽ luôn trân trọng những kiến thức và kinh nghiệm mà thầy đã truyền đạt, xem đó như hành trang quý báu trên con đường học tập và sự nghiệp sau này.
+Một lần nữa, nhóm xin gửi lời cảm ơn chân thành và kính chúc thầy thật nhiều sức khỏe, thành công và luôn giữ ngọn lửa nhiệt huyết với nghề giáo. 
