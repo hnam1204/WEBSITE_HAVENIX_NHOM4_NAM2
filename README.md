@@ -73,7 +73,7 @@ MVC 5 kết hợp SQL Server...
 
 ### Trang chủ
 
-![Trang chủ](https://via.placeholder.com/1200x500?text=Home+Page)
+![Trang chủ](https://ibb.co/bgmp9RGz)
 
 ### Danh sách sản phẩm
 
