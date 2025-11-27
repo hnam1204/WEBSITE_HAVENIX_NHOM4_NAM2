@@ -73,7 +73,10 @@ MVC 5 kết hợp SQL Server...
 
 ### Trang chủ
 
-![Trang chủ](https://i.ibb.co/tMKyrP18/z7267021645274-b678c3da7e3c.jpg)
+<p align="center">
+  <img src="https://i.ibb.co/tMKyrP18/z7267021645274-b678c3da7e3c.jpg" alt="Trang chủ HAVENIX" style="max-width:100%; border-radius: 10px;">
+</p>
+
 
 ### Danh sách sản phẩm
 
