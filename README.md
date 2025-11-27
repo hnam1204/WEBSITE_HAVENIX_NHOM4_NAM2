@@ -44,19 +44,19 @@ HAVENIX STORE là website bán hàng thời trang được xây dựng bằng AS
 # 3. Giao diện minh họa
 
 ### Trang chủ  
-*(Hình ảnh sẽ được bổ sung sau)*
+
 
 ### Danh sách sản phẩm  
-*(Hình ảnh sẽ được bổ sung sau)*
+
 
 ### Chi tiết sản phẩm  
-*(Hình ảnh sẽ được bổ sung sau)*
+
 
 ### Giỏ hàng  
-*(Hình ảnh sẽ được bổ sung sau)*
+
 
 ### Dashboard Admin  
-*(Hình ảnh sẽ được bổ sung sau)*
+
 
 ---
 
