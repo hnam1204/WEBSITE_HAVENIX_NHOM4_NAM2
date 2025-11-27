@@ -64,8 +64,7 @@ MVC 5 kết hợp SQL Server...
                                                               Dashboard;
                                                               Nhật ký; Báo
                                                               cáo; Kiểm
-                                                              thử
-  ------------------------------------------------------------------------
+
 
 ------------------------------------------------------------------------
 
@@ -73,10 +72,7 @@ MVC 5 kết hợp SQL Server...
 
 ### Trang chủ
 
-<p align="center">
-  <img src="https://i.ibb.co/tMKyrP18/z7267021645274-b678c3da7e3c.jpg" alt="Trang chủ HAVENIX" style="max-width:100%; border-radius: 10px;">
-</p>
-
+![Trang chủ](https://via.placeholder.com/1200x500?text=Home+Page)
 
 ### Danh sách sản phẩm
 
@@ -179,7 +175,7 @@ CartItems, Payments, Reviews, AdminActivityLog.
 
 ### Bước 3: Cập nhật Connection String
 
-    <add name="ShopPAEntities" connectionString="Data Source=**MSI\SQL2012R2**;Initial Catalog=havenix;Integrated Security=True;MultipleActiveResultSets=True" providerName="System.Data.SqlClient" /> /// cập nhật" MSI\SQL2012R2 "
+    <add name="AppDbContext" connectionString="Data Source=.;Initial Catalog=HAVENIX;Integrated Security=True;" providerName="System.Data.SqlClient" />
 
 ### Bước 4: Chạy dự án bằng IIS Express
 
@@ -213,14 +209,12 @@ CartItems, Payments, Reviews, AdminActivityLog.
 
 # 12. Hạn chế
 
--   Chưa có thanh toán online\
 -   Responsive mobile cần tối ưu
 
 ------------------------------------------------------------------------
 
 # 13. Định hướng phát triển
 
--   Thanh toán online\
 -   Chatbot\
 -   API Restful\
 -   Dashboard nâng cao
@@ -237,5 +231,6 @@ Trong suốt thời gian thực hiện đồ án, thầy luôn tạo điều ki�
 
 Nhóm 4 xin chân thành cảm ơn thầy vì sự tận tụy, sự kiên nhẫn và những đóng góp thầm lặng mà thầy dành cho chúng em. Thành quả của đồ án hôm nay là kết quả của cả quá trình học tập nghiêm túc dưới sự hướng dẫn tâm huyết của thầy. Chúng em sẽ luôn trân trọng những kiến thức và kinh nghiệm mà thầy đã truyền đạt, xem đó như hành trang quý báu trên con đường học tập và sự nghiệp sau này.
 
-Một lần nữa, nhóm xin gửi lời cảm ơn chân thành và kính chúc thầy thật nhiều sức khỏe, thành công và luôn giữ ngọn lửa nhiệt huyết với nghề giáo. 
+Một lần nữa, nhóm xin gửi lời cảm ơn chân thành và kính chúc thầy thật nhiều sức khỏe, thành công và luôn giữ ngọn lửa nhiệt huyết với nghề giáo.
 
+------------------------------------------------------------------------
