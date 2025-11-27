@@ -43,27 +43,27 @@ HAVENIX STORE là website bán hàng thời trang được xây dựng bằng AS
 
 # 3. Giao diện minh họa
 
+### Trang chủ  
+*(Hình ảnh sẽ được bổ sung sau)*
 
-### Trang chủ
+### Danh sách sản phẩm  
+*(Hình ảnh sẽ được bổ sung sau)*
 
+### Chi tiết sản phẩm  
+*(Hình ảnh sẽ được bổ sung sau)*
 
-### Danh sách sản phẩm
+### Giỏ hàng  
+*(Hình ảnh sẽ được bổ sung sau)*
 
+### Dashboard Admin  
+*(Hình ảnh sẽ được bổ sung sau)*
 
-### Chi tiết sản phẩm
-
-
-### Giỏ hàng
-
-
-### Dashboard Admin
-
-
+---
 
 # 4. Mục tiêu
-- Xây dựng website bán hàng hoàn chỉnh.  
-- Thiết kế giao diện hiện đại, dễ sử dụng.  
-- Xử lý đầy đủ nghiệp vụ mua sắm – thanh toán – quản trị.  
+- Xây dựng website bán hàng đầy đủ chức năng.  
+- Thiết kế giao diện hiện đại, trực quan, dễ sử dụng.  
+- Hoàn thiện toàn bộ nghiệp vụ mua sắm, hóa đơn và quản trị nội dung.  
 
 ---
 
@@ -105,18 +105,19 @@ HAVENIX STORE là website bán hàng thời trang được xây dựng bằng AS
 # 7. Cơ sở dữ liệu
 Hệ thống gồm các bảng chính:  
 Users, UserInfo, Products, Orders, OrderDetails, Cart, CartItems, Payments, Reviews, AdminActivityLog.  
-Thiết kế theo mô hình quan hệ, chuẩn hóa và dễ mở rộng.
+
+Thiết kế theo chuẩn quan hệ, tối ưu để mở rộng và xử lý nghiệp vụ thương mại điện tử.
 
 ---
 
 # 8. Quy trình xử lý đơn hàng
 
-1. Người dùng chọn sản phẩm → thêm vào giỏ hàng  
-2. Chọn hình thức thanh toán COD hoặc chuyển khoản  
-3. Lưu đơn hàng  
-4. Admin xác minh thanh toán (nếu chuyển khoản)  
-5. Cập nhật trạng thái đơn  
-6. Người dùng được thông báo  
+1. Người dùng chọn sản phẩm và thêm vào giỏ hàng  
+2. Chọn phương thức thanh toán  
+3. Tạo đơn hàng  
+4. Admin xác minh (nếu thanh toán online)  
+5. Cập nhật trạng thái  
+6. Thông báo đến người dùng  
 
 ---
 
@@ -129,25 +130,24 @@ Thiết kế theo mô hình quan hệ, chuẩn hóa và dễ mở rộng.
 
 ## Các bước cài đặt
 
-### Bước 1: Clone repo
+### Bước 1: Clone repo  
 ```
 git clone https://github.com/hnam1204/WEBSITE_HAVENIX_NHOM4_NAM2.git
 ```
 
-### Bước 2: Import database
+### Bước 2: Import database  
 - Tạo database HAVENIX  
 - Import file `havenix.bacpac` bằng SSMS  
 
-### Bước 3: Cập nhật Connection String
+### Bước 3: Cập nhật Connection String  
 ```
 <add name="AppDbContext" 
      connectionString="Data Source=SERVERNAME;Initial Catalog=HAVENIX;Integrated Security=True;" 
      providerName="System.Data.SqlClient" />
 ```
-⚠ Thay `SERVERNAME` bằng tên server SQL của bạn.
 
 ### Bước 4: Chạy dự án  
-Nhấn **IIS Express** trên Visual Studio.
+Nhấn **IIS Express** trong Visual Studio.
 
 ---
 
@@ -155,41 +155,46 @@ Nhấn **IIS Express** trên Visual Studio.
 
 ## 10.1. Deploy trên IIS
 - Bật IIS & ASP.NET  
-- Publish thành Folder  
-- Add Website trong IIS  
+- Publish dạng Folder  
+- Tạo Website mới trong IIS  
 - Trỏ đến thư mục publish  
 
 ## 10.2. Deploy lên hosting Windows
-- Publish Web Deploy  
+- Publish bằng Web Deploy  
 - Nhập thông tin hosting  
 - Restore database  
-- Cập nhật Connection String  
+- Cập nhật Connection String phù hợp  
 
 ---
 
 # 11. Kết quả đạt được
-- Website hoạt động đầy đủ chức năng  
-- Giao diện trực quan  
-- Hệ thống Admin mạnh mẽ và rõ ràng  
+- Website hoàn chỉnh, đầy đủ nghiệp vụ  
+- Giao diện sạch, trực quan  
+- Hệ thống Admin mạnh mẽ và tối ưu  
 
 ---
 
 # 12. Hạn chế
-- Responsive mobile chưa tối ưu hoàn toàn  
+- Tối ưu mobile cần cải thiện thêm  
+- Chưa tích hợp thanh toán tự động  
 
 ---
 
 # 13. Định hướng phát triển
-- Tích hợp thanh toán online  
-- Chatbot tự động hỗ trợ  
-- API Restful  
-- Dashboard phân tích nâng cao  
+- Tích hợp thanh toán online (Momo, ZaloPay…)  
+- API Restful cho mobile app  
+- Dashboard nâng cao  
+- Chatbot hỗ trợ khách hàng  
 
 ---
 
 # 14. Lời cảm ơn
-Trước hết, nhóm chúng em xin gửi lời tri ân sâu sắc nhất đến giảng viên phụ trách môn Lập trình Web – ** ThS. Đinh Minh Hòa ** Trong suốt quá trình học tập và thực hiện đồ án, thầy không chỉ truyền đạt những kiến thức chuyên môn quý giá mà còn luôn tận tình hướng dẫn, giải đáp thắc mắc và đưa ra những lời khuyên vô cùng hữu ích để chúng em có thể hoàn thiện sản phẩm của mình.
-Nhờ sự chỉ bảo tận tâm và phương pháp giảng dạy đầy nhiệt huyết của thầy, nhóm chúng em hiểu rõ hơn về quy trình xây dựng một website hoàn chỉnh: từ thiết kế giao diện người dùng, xử lý logic nghiệp vụ, đến cấu trúc cơ sở dữ liệu và vận hành hệ thống. Mỗi buổi học và mỗi góp ý của thầy đều mang lại cho chúng em thêm động lực, sự tự tin và cái nhìn thực tế hơn về lập trình Web – một lĩnh vực đang phát triển mạnh mẽ và đầy cơ hội.
-Trong suốt thời gian thực hiện đồ án, thầy luôn tạo điều kiện tốt nhất để nhóm có thể phát huy khả năng, tiếp cận kiến thức mới và rèn luyện tư duy lập trình một cách chuyên nghiệp. Những chia sẻ và định hướng của thầy không chỉ giúp nhóm giải quyết các khó khăn kỹ thuật mà còn truyền cảm hứng để chúng em hoàn thiện sản phẩm với tinh thần trách nhiệm cao nhất.
-Nhóm 4 xin chân thành cảm ơn thầy vì sự tận tụy, sự kiên nhẫn và những đóng góp thầm lặng mà thầy dành cho chúng em. Thành quả của đồ án hôm nay là kết quả của cả quá trình học tập nghiêm túc dưới sự hướng dẫn tâm huyết của thầy. Chúng em sẽ luôn trân trọng những kiến thức và kinh nghiệm mà thầy đã truyền đạt, xem đó như hành trang quý báu trên con đường học tập và sự nghiệp sau này.
-Một lần nữa, nhóm xin gửi lời cảm ơn chân thành và kính chúc thầy thật nhiều sức khỏe, thành công và luôn giữ ngọn lửa nhiệt huyết với nghề giáo. 
+Nhóm xin gửi lời tri ân sâu sắc đến giảng viên **ThS. Đinh Minh Hòa** — người đã tận tình hướng dẫn, giải đáp và truyền cảm hứng trong suốt quá trình thực hiện đồ án.
+
+Nhờ sự tận tâm và phương pháp giảng dạy đầy nhiệt huyết của thầy, nhóm hiểu rõ hơn về quy trình xây dựng một website hoàn chỉnh: từ giao diện, xử lý logic, đến cơ sở dữ liệu và vận hành hệ thống.  
+
+Trong thời gian thực hiện đồ án, thầy luôn tạo điều kiện để nhóm phát huy khả năng, tiếp cận kiến thức mới và rèn luyện tư duy lập trình chuyên nghiệp.  
+
+Thành quả của đồ án hôm nay là minh chứng cho sự hỗ trợ và định hướng quý báu mà thầy đã dành cho chúng em.  
+
+Một lần nữa, nhóm xin gửi lời cảm ơn chân thành và kính chúc thầy thật nhiều sức khỏe, thành công và giữ mãi ngọn lửa nhiệt huyết với nghề.
